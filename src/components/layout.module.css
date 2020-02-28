@@ -1,0 +1,63 @@
+@import "minireset.css";
+
+@value mqFixed: (min-width: 1000px);
+@value colorLink: #aaa;
+@value colorText: #eee;
+
+@value display: Orbitron;
+
+html {
+    background: black;
+    color: colorText;
+    font: normal 16px/1.6 Oxanium;
+    letter-spacing: 0.05em;
+}
+
+a {
+    color: colorLink;
+    text-decoration: none;;
+}
+
+h1 {
+    font-family: display;
+    font-size: 1.6em;
+    margin-bottom: 0.6em;
+}
+
+h2 {
+    font-family: display;
+    font-size: 1.4em;
+    margin-bottom: 0.6em;
+}
+
+
+dt {
+    color: colorLink;
+}
+
+dl dd {
+    display: inline-block;
+    margin: 0 0 1em 0.4em;
+
+    a {
+        color: colorText;
+    }
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 4%;
+
+    @media mqFixed {
+        padding: 0;
+    }
+}
+
+.footer {
+    padding: 1em 0;
+}

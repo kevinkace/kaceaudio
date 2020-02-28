@@ -1,0 +1,23 @@
+@value colorLink from "./layout.module.css";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 1.6em 0;
+    padding-bottom: 0.6em;
+
+    border-bottom: solid 1px #fff;
+}
+
+.logo {
+    margin: 0;
+    font-size: 3em;
+    line-height: 1.2;;
+}
+
+nav {
+    a {
+        margin: 0 0 0 0.6em;
+    }
+}

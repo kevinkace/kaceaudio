@@ -1,0 +1,6 @@
+.discog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 2em;
+    gap: 1em;
+}
