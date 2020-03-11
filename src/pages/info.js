@@ -15,7 +15,7 @@ const SecondPage = () => (
       <dd>seattle, wa</dd>
       <dt>origin</dt>
       <dd>toronto, can</dd>
-      <dt>twitter</dt>
+      <dt>contact</dt>
       <dd><a href="https://twitter.com/kaceaudio">@kaceaudio</a></dd>
     </dl>
   </Layout>

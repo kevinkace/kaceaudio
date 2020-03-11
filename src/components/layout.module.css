@@ -59,5 +59,7 @@ dl dd {
 }
 
 .footer {
+    display: flex;
     padding: 1em 0;
+    justify-content: space-between;
 }
