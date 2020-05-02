@@ -17,6 +17,12 @@ const IndexPage = () => (
         href='https://soundcloud.com/kace-1/companion/s-9N4fT'
         embed='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/774092650%3Fsecret_token%3Ds-6jTZP&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
       />
+      <Song
+        title='Companion'
+        img='companion.jpg'
+        href='https://soundcloud.com/kace-1/companion/s-9N4fT'
+        embed='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/774092650%3Fsecret_token%3Ds-6jTZP&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+      />
     </div>
 
     {/* <h2>archive</h2>

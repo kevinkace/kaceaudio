@@ -13,9 +13,16 @@ html {
     letter-spacing: 0.05em;
 }
 
+button,
 a {
     color: colorLink;
-    text-decoration: none;;
+    text-decoration: none;
+    background: inherit;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-size: 1em;
+    font-family: inherit;
 }
 
 h1 {
