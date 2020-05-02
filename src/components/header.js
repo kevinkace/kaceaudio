@@ -14,6 +14,7 @@ const Header = ({ siteTitle }) => (
       <nav>
         <Link to="/">music</Link>
         <Link to="/info">info</Link>
+        <Link to="/samples">samples</Link>
         {/* <Link to="/archive">archive</Link> */}
       </nav>
   </header>
