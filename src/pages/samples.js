@@ -37,11 +37,11 @@ export default function SamplesPage() {
             <ul className={css.samples}>
                 {sampleData
                     .filter(({ tags }) => filter ? tags.includes(filter) : true)
-                    .map(({ title, play, href }) => (
+                    .map(({ title, preview, href }) => (
                     <li key={title}>
                         <Sample
                             title={title}
-                            play={play}
+                            preview={preview}
                             href={href}
                         />
                     </li>

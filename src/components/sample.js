@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import css from './sample.module.css';
 
 function Audio({ src }) {
-    return <audio controls className={css.player}>
-        <source src={src} type='audio/mpeg' autoplay />
+    return <audio controls className={css.player} autoPlay={true}>
+        <source src={src} type='audio/mpeg' />
     </audio>
 }
 
