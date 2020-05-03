@@ -1,0 +1,43 @@
+.actions {
+    font-size: 0.8em;
+}
+
+.action {
+    position: relative;
+    padding-right: 1em;
+    margin-right: 1em;
+
+    &:before {
+        content: '';
+        position: absolute;
+        height: 0.7em;
+        width: 0.7em;
+        top: 0.1em;
+        right: 0;
+
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: 100% 50%;
+
+        opacity: 0.8;
+    }
+}
+
+.download {
+    composes: action;
+
+    &:before {
+        background-image: url('../icons/download.svg');
+    }
+}
+
+.play {
+    composes: action;
+
+    &:before {
+        width: 0.8em;
+        height: 0.8em;
+        top: 0.2em;
+        background-image: url('../icons/play.svg');
+    }
+}

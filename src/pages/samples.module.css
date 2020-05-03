@@ -1,0 +1,30 @@
+.filter {
+    display: flex;
+    margin-bottom: 1em;
+    font-size: 0.8em;
+
+    ul {
+        margin: -0.25em 0 0 0.5em;
+        display: flex;
+    }
+
+    li {
+        margin-right: 0.2em;
+    }
+
+    button {
+        padding: 0.4em 0.4em 0.1em;
+    }
+}
+
+.selected {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0.2em;
+    text-decoration: none !important;
+}
+
+.samples {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+}

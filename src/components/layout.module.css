@@ -15,6 +15,7 @@ html {
 
 button,
 a {
+    cursor: pointer;
     color: colorLink;
     text-decoration: none;
     background: inherit;
@@ -23,6 +24,11 @@ a {
     border: none;
     font-size: 1em;
     font-family: inherit;
+}
+
+button:focus {
+    outline: none;
+    text-decoration: underline;
 }
 
 h1 {
@@ -44,7 +50,7 @@ dt {
 
 dl dd {
     display: inline-block;
-    margin: 0 0 1em 0.4em;
+    margin: 0 0 0 0.4em;
 
     a {
         color: colorText;

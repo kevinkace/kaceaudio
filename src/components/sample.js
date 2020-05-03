@@ -1,15 +1,27 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
+import css from './sample.module.css';
+
 const Sample = ({ title, href, play }) => {
     const [ player, setPlayer ] = useState(false);
 
     return (
         <>
-        <h3>Companion Drums</h3>
+            <h3>{title}</h3>
 
-        <a href="/download">download</a>
-        <button>listen</button>
+            <div class={css.actions}>
+                <a href={href} className={css.download}>download</a>
+
+                <button
+                    className={css.play}
+                    onClick={() => {
+                        console.log(play);
+                    }}
+                >
+                    listen
+                </button>
+            </div>
         </>
     )
 };
