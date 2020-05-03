@@ -22,7 +22,7 @@ export default function SamplesPage() {
                 filter:
                 <ul>
                     {tags.map(tag =>
-                        <li>
+                        <li key={tag}>
                             <button
                                 className={filter === tag ? css.selected : null}
                                 onClick={() => {
@@ -38,7 +38,7 @@ export default function SamplesPage() {
                 {sampleData
                     .filter(({ tags }) => filter ? tags.includes(filter) : true)
                     .map(({ title, play, href }) => (
-                    <li>
+                    <li key={title}>
                         <Sample
                             title={title}
                             play={play}

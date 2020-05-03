@@ -3,25 +3,33 @@ import React, { useState } from 'react';
 
 import css from './sample.module.css';
 
-const Sample = ({ title, href, play }) => {
+function Audio({ src }) {
+    return <audio controls className={css.player}>
+        <source src={src} type='audio/mpeg' autoplay />
+    </audio>
+}
+
+function Sample({ title, href, preview }) {
     const [ player, setPlayer ] = useState(false);
 
     return (
         <>
             <h3>{title}</h3>
 
-            <div class={css.actions}>
+            <div className={css.actions}>
                 <a href={href} className={css.download}>download</a>
 
                 <button
                     className={css.play}
                     onClick={() => {
-                        console.log(play);
+                        setPlayer(!player);
                     }}
                 >
                     listen
                 </button>
             </div>
+
+            {player ? <Audio src={preview} /> : null}
         </>
     )
 };
