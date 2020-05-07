@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -7,11 +7,13 @@ import Sample from '../components/sample';
 import sampleData from './sampleData';
 
 import css from './samples.module.css';
+import { PlayingContext } from '../components/provider.js';
 
 const tags = [ 'drums', 'leads', 'bass', 'pads', 'fx' ];
 
 export default function SamplesPage() {
     const [ filter, setFilter ] = useState();
+    const { playing } = useContext(PlayingContext);
 
     return (
         <Layout>

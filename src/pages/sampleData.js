@@ -1,32 +1,32 @@
 export default [{
     title   : 'Companion Sample Pack',
-    preview : '/play',
-    href    : '/download',
+    preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-samples.mp3',
+    href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-samples-kaceaudio.com.zip',
     tags    : []
 }, {
     title   : 'Companion Drums',
-    preview : '/play',
-    href    : '/download',
+    preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-drums.mp3',
+    href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-drums-kaceaudio.com.zip',
     tags    : [ 'drums' ]
 }, {
     title   : 'Companion Leads',
-    preview : '/play',
-    href    : '/download',
+    preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-leads.mp3',
+    href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-leads-kaceaudio.com.zip',
     tags    : [ 'leads' ]
 }, {
     title   : 'Companion Bass',
-    preview : '/play',
-    href    : '/download',
+    preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-bass.mp3',
+    href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-bass-kaceaudio.com.zip',
     tags    : [ 'bass' ]
 }, {
     title   : 'Companion Pads',
-    preview : '/play',
-    href    : '/download',
+    preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-pads.mp3',
+    href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-pads-kaceaudio.com.zip',
     tags    : [ 'pads' ]
 }, {
     title   : 'Companion FX',
-    preview : '/play',
-    href    : '/download',
+    preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-fx.mp3',
+    href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-fx-kaceaudio.com.zip',
     tags    : [ 'fx' ]
 },
 

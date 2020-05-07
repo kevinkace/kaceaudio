@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import css from './sample.module.css';
+import { PlayingContext } from './provider.js';
 
 function Audio({ src }) {
     return <audio controls className={css.player} autoPlay={true}>
@@ -11,6 +12,8 @@ function Audio({ src }) {
 
 function Sample({ title, href, preview }) {
     const [ player, setPlayer ] = useState(false);
+
+    const { changePlaying } = useContext(PlayingContext);
 
     return (
         <>
@@ -23,6 +26,7 @@ function Sample({ title, href, preview }) {
                     className={css.play}
                     onClick={() => {
                         setPlayer(!player);
+                        changePlaying(preview);
                     }}
                 >
                     listen
