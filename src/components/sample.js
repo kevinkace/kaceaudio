@@ -1,19 +1,11 @@
 import PropTypes from 'prop-types';
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import css from './sample.module.css';
 import { PlayingContext } from './provider.js';
 
-function Audio({ src }) {
-    return <audio controls className={css.player} autoPlay={true}>
-        <source src={src} type='audio/mpeg' />
-    </audio>
-}
-
 function Sample({ title, href, preview }) {
-    const [ player, setPlayer ] = useState(false);
-
-    const { changePlaying } = useContext(PlayingContext);
+    const { playing, changePlaying } = useContext(PlayingContext);
 
     return (
         <>
@@ -25,15 +17,12 @@ function Sample({ title, href, preview }) {
                 <button
                     className={css.play}
                     onClick={() => {
-                        setPlayer(!player);
-                        changePlaying(preview);
+                        changePlaying(playing === preview ? null : preview);
                     }}
                 >
                     listen
                 </button>
             </div>
-
-            {player ? <Audio src={preview} /> : null}
         </>
     )
 };

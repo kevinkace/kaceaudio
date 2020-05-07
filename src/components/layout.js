@@ -8,9 +8,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+
 import soundcloudIcon from '../icons/soundcloud.svg';
 
 import { PlayingContext } from './provider.js';
+import Player from './player';
 
 import Header from './header';
 
@@ -36,7 +38,8 @@ function Layout({ children }) {
                     <main>{children}</main>
                 </div>
 
-                Playing : { context.playing }
+                <Player playing={context.playing}></Player>
+
                 <footer className={ css.footer }>
                     <div>© {new Date().getFullYear()}</div>
                     <a href='https://soundcloud.com/kace-1'>
