@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -7,13 +7,11 @@ import Sample from '../components/sample';
 import sampleData from './sampleData';
 
 import css from './samples.module.css';
-import { PlayingContext } from '../components/provider.js';
 
-const tags = [ 'drums', 'leads', 'bass', 'pads', 'fx' ];
+const tags = [ 'drums', 'leads', 'bass', 'pads', 'fx', 'all' ];
 
 export default function SamplesPage() {
     const [ filter, setFilter ] = useState();
-    const { playing } = useContext(PlayingContext);
 
     return (
         <Layout>
@@ -28,7 +26,7 @@ export default function SamplesPage() {
                             <button
                                 className={filter === tag ? css.selected : null}
                                 onClick={() => {
-                                    setFilter(filter === tag ? undefined : tag);
+                                    setFilter((filter === tag || tag === 'all') ? undefined : tag);
                                 }}
                             >{tag}</button>
                         </li>
@@ -39,12 +37,13 @@ export default function SamplesPage() {
             <ul className={css.samples}>
                 {sampleData
                     .filter(({ tags }) => filter ? tags.includes(filter) : true)
-                    .map(({ title, preview, href }) => (
+                    .map(({ title, preview, href, desc }) => (
                     <li key={title}>
                         <Sample
                             title={title}
                             preview={preview}
                             href={href}
+                            desc={desc}
                         />
                     </li>
                 ))}

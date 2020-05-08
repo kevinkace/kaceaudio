@@ -14,14 +14,14 @@ const IndexPage = () => (
       <Song
         title='Companion'
         img='companion.jpg'
-        href='https://soundcloud.com/kace-1/companion/s-9N4fT'
-        embed='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/774092650%3Fsecret_token%3Ds-6jTZP&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+        href='https://soundcloud.com/kace-1/companion/s-oDIAyumVxtG'
+        embed='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/815157661%3Fsecret_token%3Ds-oDIAyumVxtG&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
       />
       <Song
-        title='Companion'
-        img='companion.jpg'
-        href='https://soundcloud.com/kace-1/companion/s-9N4fT'
-        embed='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/774092650%3Fsecret_token%3Ds-6jTZP&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
+        title='Split'
+        img='split.jpg'
+        href='https://soundcloud.com/kace-1/split/s-0RjF0FKIvRM'
+        embed='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/815156998%3Fsecret_token%3Ds-0RjF0FKIvRM&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
       />
     </div>
 

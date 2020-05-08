@@ -19,7 +19,7 @@ const Song = ({ title, img, href, embed }) => {
         {
             player ?
 
-                <iframe width='100%' height='300' scrolling='no' frameborder='no' allow='autoplay' src={ embed } title={ title }></iframe> :
+                <iframe width='100%' height='300' scrolling='no' frameBorder='no' allow='autoplay' src={ embed } title={ title }></iframe> :
 
                 <Image src={ img } alt={ title } className={ css.play }/>
         }
