@@ -8,7 +8,6 @@ import css from './info.module.css';
 const SecondPage = () => (
     <Layout>
         <SEO title='info' />
-        <h1>info</h1>
 
         <div className={css.info}>
             <dl>

@@ -38,3 +38,26 @@
         }
     }
 }
+
+.p {
+    display: flex;
+    align-items: center;
+
+    font-size: 0.8em;
+    opacity: 0.8;
+
+    a {
+        margin-left: 0.6em;
+    }
+
+    img {
+        width: 1.6em;
+    }
+}
+
+.dropbox,
+.drive {
+    img {
+        width: 1.3em;
+    }
+}

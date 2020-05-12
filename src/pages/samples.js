@@ -16,7 +16,6 @@ export default function SamplesPage() {
     return (
         <Layout>
             <SEO title='samples' />
-            <h1>samples</h1>
 
             <div className={css.filter}>
                 filter:

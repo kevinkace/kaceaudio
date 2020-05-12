@@ -7,6 +7,17 @@ import Header from './header';
 import css from './layout.module.css';
 
 import soundcloudIcon from '../icons/soundcloud.svg';
+import twitterIcon from '../icons/twitter.svg';
+
+const links = [{
+  href : 'https://soundcloud.com/kace-1',
+  icon : soundcloudIcon,
+  alt  : 'soundcloud'
+}, {
+  href : 'https://twitter.com/kaceaudio',
+  icon : twitterIcon,
+  alt  : 'twitter'
+}];
 
 function Layout({ children }) {
   const data = useStaticQuery(graphql`
@@ -26,10 +37,13 @@ function Layout({ children }) {
         <main>{children}</main>
       </div>
       <footer className={ css.footer }>
+
         <div>© {new Date().getFullYear()}</div>
-        <a href='https://soundcloud.com/kace-1'>
-          <img src={ soundcloudIcon } alt='soundcloud'/>
-        </a>
+
+        <div className={css.links}>
+          {links.map(({ href, icon, alt }) => <a href={href} key={alt}><img src={icon} alt={alt} /></a>)}
+        </div>
+
       </footer>
     </div>
   )

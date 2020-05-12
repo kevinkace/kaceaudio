@@ -43,6 +43,10 @@ h2 {
     margin-bottom: 0.6em;
 }
 
+p {
+    margin-bottom: 1em;
+}
+
 
 dt {
     color: colorLink;
@@ -76,3 +80,21 @@ dl dd {
     padding: 1em 0;
     justify-content: space-between;
 }
+
+.links {
+    display: flex;
+    align-items: center;
+
+    opacity: 0.8;
+
+    a {
+        margin-left: 1em;
+
+        &:nth-child(2) {
+            img {
+                width: 1.6em;
+            }
+        }
+    }
+}
+

@@ -5,26 +5,41 @@ import css from './song.module.css';
 
 import Image from './image-2';
 
-const Song = ({ title, img, href, embed }) => {
+import soundcloudIcon from '../icons/soundcloud.svg';
+import dropboxIcon from '../icons/dropbox.svg';
+import driveIcon from '../icons/drive.svg';
+
+const Song = ({ title, img, href, embed, soundcloud, dropbox, drive }) => {
     const [ player, setPlayer ] = useState(false);
 
     embed = embed.replace('auto_play=false', 'auto_play=true');
 
     return (
-    <a href={ href} onClick={(e) => {
-        e.preventDefault();
+        <div>
+            <a href={ href} onClick={(e) => {
+                e.preventDefault();
 
-        setPlayer(true);
-    }}>
-        {
-            player ?
+                setPlayer(true);
+            }}>
+                {
+                    player ?
 
-                <iframe width='100%' height='300' scrolling='no' frameBorder='no' allow='autoplay' src={ embed } title={ title }></iframe> :
+                        <iframe width='100%' height='300' scrolling='no' frameBorder='no' allow='autoplay' src={ embed } title={ title }></iframe> :
 
-                <Image src={ img } alt={ title } className={ css.play }/>
-        }
-    </a>
-)};
+                        <Image src={ img } alt={ title } className={ css.play }/>
+                }
+            </a>
+
+            <p className={css.p}>
+                download:
+                <a href={soundcloud} className={css.soundcloud}><img src={soundcloudIcon} alt='soundcloud' /></a>
+                <a href={dropbox} className={css.dropbox}><img src={dropboxIcon} alt='dropbox' /></a>
+                <a href={drive} className={css.drive}><img src={driveIcon} alt='drive' /></a>
+            </p>
+
+        </div>
+    );
+};
 
 Song.propTypes = {
     title : PropTypes.string,
