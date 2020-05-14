@@ -25,7 +25,7 @@ const songs = [{
   drive : 'https://drive.google.com/file/d/175XlWwI99ZQ-4SQ4ua__SaSEnfOifRNa/view?usp=sharing'
 }];
 
-function Songs() {
+function Songs() { // eslint-disable-line no-unused-vars
   return (
     <>
       {songs.map(({ title, img, href, embed }) =>
@@ -41,6 +41,7 @@ const IndexPage = () => (
 
     <p>Nothing here yet I'm afraid.</p>
     <p>In the meantime there are sample packs from some of my up-coming releases in the <Link to='/samples'>samples section</Link> - they're free, and open source.</p>
+    <p></p>
 
     <div className={ css.discog }>
       {/* <Songs /> */}
