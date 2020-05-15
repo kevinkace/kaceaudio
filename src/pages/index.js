@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
-import Song from '../components/song';
+import Song from '../components/song/song';
 
 import css from './index.module.css';
 

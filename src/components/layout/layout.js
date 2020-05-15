@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from './header';
+import Header from '../header/header';
 
 import css from './layout.module.css';
 
-import soundcloudIcon from '../icons/soundcloud.svg';
-import twitterIcon from '../icons/twitter.svg';
+import soundcloudIcon from '../../icons/soundcloud.svg';
+import twitterIcon from '../../icons/twitter.svg';
 
 const links = [{
   href : 'https://soundcloud.com/kace-1',

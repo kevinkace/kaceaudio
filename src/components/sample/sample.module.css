@@ -33,7 +33,7 @@
     composes: action;
 
     &:before {
-        background-image: url('../icons/download.svg');
+        background-image: url('../../icons/download.svg');
     }
 }
 
@@ -44,7 +44,7 @@
         width: 0.8em;
         height: 0.8em;
         top: 0.2em;
-        background-image: url('../icons/play.svg');
+        background-image: url('../../icons/play.svg');
     }
 }
 

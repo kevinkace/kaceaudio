@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import css from './header.module.css';
 
-import menuIcon from '../icons/menu.svg';
+import menuIcon from '../../icons/menu.svg';
 
 function Links({ onRoute = () => {} }) {
   const links = [{

@@ -15,7 +15,7 @@
         height: 30%;
         width: 30%;
 
-        background:  url('../icons/play.svg') no-repeat 80% 50%;
+        background:  url('../../icons/play.svg') no-repeat 80% 50%;
         background-size: 80%;
         border-radius: 50%;
         border: solid 2px white;

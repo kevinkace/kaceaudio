@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
-import Sample from '../components/sample';
+import Sample from '../components/sample/sample';
 
-import sampleData from './sampleData';
+import samples from '../data/samples';
 
 import css from './samples.module.css';
 
@@ -34,7 +34,7 @@ export default function SamplesPage() {
             </div>
 
             <ul className={css.samples}>
-                {sampleData
+                {samples
                     .filter(({ tags }) => filter ? tags.includes(filter) : true)
                     .map(({ title, preview, href, desc }) => (
                     <li key={title}>

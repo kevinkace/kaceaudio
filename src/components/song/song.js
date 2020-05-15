@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 
 import css from './song.module.css';
 
-import Image from './image-2';
+import Image from '../image-2';
 
-import soundcloudIcon from '../icons/soundcloud.svg';
-import dropboxIcon from '../icons/dropbox.svg';
-import driveIcon from '../icons/drive.svg';
+import soundcloudIcon from '../../icons/soundcloud.svg';
+import dropboxIcon from '../../icons/dropbox.svg';
+import driveIcon from '../../icons/drive.svg';
 
 const Song = ({ title, img, href, embed, soundcloud, dropbox, drive }) => {
     const [ player, setPlayer ] = useState(false);
