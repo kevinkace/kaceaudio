@@ -41,7 +41,7 @@ export default function IndexPage() {
 
     <p>Nothing here yet I'm afraid.</p>
     <p>In the meantime there are sample packs from some of my up-coming releases in the <Link to='/samples'>samples section</Link> - they're free, and open source.</p>
-    <p></p>
+    <p>Follow me on <a href='https://soundcloud.com/kace-1'>SoundCloud</a> or <a href='https://twitter.com/kaceaudio'>Twitter</a>.</p>
 
     <div className={ css.discog }>
       {/* <Songs /> */}

@@ -13,17 +13,17 @@ export default function SecondPage() {
             <dl>
                 <div>
                     <dt>name</dt>
-                    <dd>kevin cameron</dd>
+                    <dd>Kevin A. Cameron</dd>
                 </div>
 
                 <div>
                     <dt>location</dt>
-                    <dd>seattle, wa</dd>
+                    <dd>Seattle, Wa</dd>
                 </div>
 
                 <div>
                     <dt>origin</dt>
-                    <dd>toronto, can</dd>
+                    <dd>Toronto, Can</dd>
                 </div>
 
                 <div>
@@ -32,7 +32,7 @@ export default function SecondPage() {
                 </div>
             </dl>
 
-            <p>Sound designer, engineer, and composer. Started in audio as a drum &amp; bass dj and producer in Ontario Canada, outside Toronto. Received an Honours Diploma from The Harris Institute in producing/engineering. Had a short stint as the product specialist for Steinberg Canada, and recording engineer before moving to Seattle.</p>
+            <p>Composer, sound designer, and engineer. Started in audio as a drum &amp; bass dj and producer in Ontario Canada, outside Toronto. Received an Honours Diploma from The Harris Institute in producing/engineering. Had a short stint as the product specialist for Steinberg Canada, and recording engineer before moving to Seattle.</p>
         </div>
     </Layout>;
 };

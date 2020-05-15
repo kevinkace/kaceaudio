@@ -19,6 +19,8 @@
 
 .logo {
     margin: 0;
+
+    text-transform: lowercase;
     font-size: 13vw;
     line-height: 1;
 
