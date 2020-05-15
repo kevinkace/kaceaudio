@@ -9,7 +9,7 @@ import soundcloudIcon from '../../icons/soundcloud.svg';
 import dropboxIcon from '../../icons/dropbox.svg';
 import driveIcon from '../../icons/drive.svg';
 
-const Song = ({ title, img, href, embed, soundcloud, dropbox, drive }) => {
+function Song({ title, img, href, embed, soundcloud, dropbox, drive }) {
     const [ player, setPlayer ] = useState(false);
 
     embed = embed.replace('auto_play=false', 'auto_play=true');

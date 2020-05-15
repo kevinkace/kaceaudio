@@ -1,9 +1,8 @@
-// import get from 'lodash.get'
-import React, { useMemo } from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import React, { useMemo } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 
-const Image = ({ src, ...props }) => {
+export default function Image({ src, ...props }) {
     const data = useStaticQuery(graphql`
     query {
         allFile( filter: { internal: { mediaType: { regex: "/image/" } } } ) {
@@ -17,7 +16,7 @@ const Image = ({ src, ...props }) => {
             }
         }
     }
-`)
+`);
 
     const match = useMemo(() => (
         data.allFile.nodes.find(({ relativePath }) => src === relativePath)
@@ -32,7 +31,5 @@ const Image = ({ src, ...props }) => {
             Tag='div'
             {...props}
         />
-    ) : null
+    ) : null;
 }
-
-export default Image

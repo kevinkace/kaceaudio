@@ -35,8 +35,8 @@ function Songs() { // eslint-disable-line no-unused-vars
   );
 }
 
-const IndexPage = () => (
-  <Layout>
+export default function IndexPage() {
+  return <Layout>
     <SEO title='music' />
 
     <p>Nothing here yet I'm afraid.</p>
@@ -47,7 +47,5 @@ const IndexPage = () => (
       {/* <Songs /> */}
     </div>
 
-  </Layout>
-)
-
-export default IndexPage;
+  </Layout>;
+};

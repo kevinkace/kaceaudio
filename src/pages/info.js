@@ -5,8 +5,8 @@ import SEO from '../components/seo';
 
 import css from './info.module.css';
 
-const SecondPage = () => (
-    <Layout>
+export default function SecondPage() {
+    return <Layout>
         <SEO title='info' />
 
         <div className={css.info}>
@@ -34,7 +34,5 @@ const SecondPage = () => (
 
             <p>Sound designer, engineer, and composer. Started in audio as a drum &amp; bass dj and producer in Ontario Canada, outside Toronto. Received an Honours Diploma from The Harris Institute in producing/engineering. Had a short stint as the product specialist for Steinberg Canada, and recording engineer before moving to Seattle.</p>
         </div>
-    </Layout>
-)
-
-export default SecondPage
+    </Layout>;
+};
