@@ -1,34 +1,20 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React from 'react';
 
 import css from './song.module.css';
 
-import Image from '../image-2';
+import Player from '../player/player';
 
 import soundcloudIcon from '../../icons/soundcloud.svg';
 import dropboxIcon from '../../icons/dropbox.svg';
 import driveIcon from '../../icons/drive.svg';
 
 function Song({ title, img, href, embed, soundcloud, dropbox, drive }) {
-    const [ player, setPlayer ] = useState(false);
-
     embed = embed.replace('auto_play=false', 'auto_play=true');
 
     return (
         <div>
-            <a href={ href} onClick={(e) => {
-                e.preventDefault();
-
-                setPlayer(true);
-            }}>
-                {
-                    player ?
-
-                        <iframe width='100%' height='300' scrolling='no' frameBorder='no' allow='autoplay' src={ embed } title={ title }></iframe> :
-
-                        <Image src={ img } alt={ title } className={ css.play }/>
-                }
-            </a>
+            <Player href={href} title={title} img={img} embed={embed}></Player>
 
             <p className={css.p}>
                 download:

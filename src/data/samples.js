@@ -1,77 +1,77 @@
 export default [{
-    title   : 'Companion Sample Pack',
+    title   : 'Companion sample pack',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-samples.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-samples-kaceaudio.com.zip',
     desc    : 'Samples from Companion, including drums, leads, pads, bass, and FX.',
-    tags    : [ 'songs' ]
+    tags    : [ 'songs', 'Companion' ]
 }, {
-    title   : 'Companion Drums',
+    title   : 'Companion drums',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-drums.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-drums-kaceaudio.com.zip',
     desc    : 'Drum samples from Companion.',
-    tags    : [ 'drums' ]
+    tags    : [ 'drums', 'Companion' ]
 }, {
-    title   : 'Companion Leads',
+    title   : 'Companion leads',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-leads.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-leads-kaceaudio.com.zip',
     desc    : 'Lead samples from Companion.',
-    tags    : [ 'leads' ]
+    tags    : [ 'leads', 'Companion' ]
 }, {
-    title   : 'Companion Bass',
+    title   : 'Companion bass',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-bass.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-bass-kaceaudio.com.zip',
     desc    : 'Bass samples from Companion.',
-    tags    : [ 'bass' ]
+    tags    : [ 'bass', 'Companion' ]
 }, {
-    title   : 'Companion Pads',
+    title   : 'Companion pads',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-pads.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-pads-kaceaudio.com.zip',
     desc    : 'Pad samples from Companion.',
-    tags    : [ 'pads' ]
+    tags    : [ 'pads', 'Companion' ]
 }, {
-    title   : 'Companion FX',
+    title   : 'Companion fx',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-fx.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Companion/Companion-fx-kaceaudio.com.zip',
     desc    : 'FX samples from Companion.',
-    tags    : [ 'fx' ]
+    tags    : [ 'fx', 'Companion' ]
 },
 
 {
-    title   : 'Split Sample Pack',
+    title   : 'Split sample pack',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-samples.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-samples-kaceaudio.com.zip',
     desc    : 'Samples from Split, including drums, leads, pads, bass, and FX.',
-    tags    : [ 'songs' ]
+    tags    : [ 'songs', 'Split' ]
 }, {
-    title   : 'Split Drums',
+    title   : 'Split drums',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-drums.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-drums-kaceaudio.com.zip',
     desc    : 'Drum samples from Split.',
-    tags    : [ 'drums' ]
+    tags    : [ 'drums', 'Split' ]
 }, {
-    title   : 'Split Leads',
+    title   : 'Split leads',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-leads.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-leads-kaceaudio.com.zip',
     desc    : 'Lead samples from Split.',
-    tags    : [ 'leads' ]
+    tags    : [ 'leads', 'Split' ]
 }, {
     title   : 'Split bass',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-bass.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-bass-kaceaudio.com.zip',
     desc    : 'Bass samples from Split.',
-    tags    : [ 'bass' ]
+    tags    : [ 'bass', 'Split' ]
 }, {
-    title   : 'Split Pads',
+    title   : 'Split pads',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-pads.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-pads-kaceaudio.com.zip',
     desc    : 'Pad samples from Split.',
-    tags    : [ 'pads' ]
+    tags    : [ 'pads', 'Split' ]
 }, {
-    title   : 'Split FX',
+    title   : 'Split fx',
     preview : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-fx.mp3',
     href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/samples/songs/Split/Split-fx-kaceaudio.com.zip',
     desc    : 'FX samples from Split.',
-    tags    : [ 'fx' ]
+    tags    : [ 'fx', 'Split' ]
 },
 
 {

@@ -1,0 +1,67 @@
+.flex {
+    composes: split from '../../components/layout/layout.module.css';
+}
+
+.player {
+    margin-bottom: 2em;
+}
+
+.button {
+    display: block;
+    margin-bottom: 1em;
+    padding: 0.5em 2em 0.3em;
+
+    text-align: center;
+    color: white;
+
+    background: red;
+
+    span {
+        position: relative;
+        margin-left: 1.4em;
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: 100%;
+            height: 1.4em;
+            width: 1.4em;
+            margin-right: 0.6em;
+
+            background: no-repeat 50% 50%;
+            background-size: contain;
+        }
+    }
+}
+
+.dropbox {
+    composes: button;
+
+    background: #0061ff;
+
+    span::before {
+        background-image: url(../../icons/dropbox.svg);
+    }
+}
+
+.drive {
+    composes: button;
+
+    color: black;
+    background: #ffd04a;
+
+    span::before {
+        background-image: url(../../icons/drive.svg);
+        filter: invert(1);
+    }
+}
+
+.soundcloud {
+    composes: button;
+
+    background: #f70;
+
+    span::before {
+        background-image: url(../../icons/soundcloud.svg);
+    }
+}

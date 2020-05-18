@@ -9,7 +9,7 @@ function Audio({ src }) {
     </audio>
 }
 
-function Sample({ title, href, preview, desc }) {
+function Sample({ title, href, preview, desc, showDesc }) {
     const [ player, setPlayer ] = useState(false);
 
     return (
@@ -29,7 +29,7 @@ function Sample({ title, href, preview, desc }) {
                 </button>
             </div>
 
-            <p className={css.desc}>{desc}</p>
+            { showDesc !== false ? <p className={css.desc}>{desc}</p> : null }
 
             {player ? <Audio src={preview} /> : null}
         </>

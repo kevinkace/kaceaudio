@@ -1,0 +1,40 @@
+.play {
+    position: relative;
+
+    border: solid 1px transparent;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        height: 30%;
+        width: 30%;
+
+        background:  url('../../icons/play.svg') no-repeat 80% 50%;
+        background-size: 80%;
+        border-radius: 50%;
+        border: solid 2px white;
+
+        transition: opacity 0.3s;
+    }
+
+    &:before {
+        mix-blend-mode: soft-light;
+    }
+
+    &:after {
+        opacity: 0.2;
+    }
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        &:after {
+            opacity: 0.5;
+        }
+    }
+}
