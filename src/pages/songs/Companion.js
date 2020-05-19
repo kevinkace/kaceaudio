@@ -15,7 +15,7 @@ export default function IndexPage() {
     return <Layout>
         <SEO title='Companion' meta={[{ name: "robots", content: "noindex" }]}/>
 
-        <h1>Companion</h1>
+        <h1>Companion <span>: pre-release access</span></h1>
 
         <div className={css.flex}>
             <div>
