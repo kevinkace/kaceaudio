@@ -10,7 +10,7 @@ import css from './songs.module.css';
 import songs from '../../data/songs';
 
 export default function IndexPage() {
-    const { title, img, href, embed, dropbox, drive, soundcloud } = songs.data.Companion;
+    const { title, img, href, embed, wav, mp3, soundcloud } = songs.data.Companion;
 
     return <Layout>
         <SEO title='Companion' meta={[{ name: "robots", content: "noindex" }]}/>
@@ -26,9 +26,14 @@ export default function IndexPage() {
                 <h2>download</h2>
 
                 <ul>
-                    <li><a href={dropbox} className={css.dropbox}><span>Dropbox</span></a></li>
-                    <li><a href={drive} className={css.drive}><span>Drive</span></a></li>
                     <li><a href={soundcloud} className={css.soundcloud}><span>Soundcloud</span></a></li>
+                    <li><a href={wav.dropbox} className={css.dropbox}><span>Dropbox</span></a></li>
+                    <li><a href={wav.drive} className={css.drive}><span>Drive</span></a></li>
+                    <li className={css.mp3s}>
+                        mp3:
+                        <a href={mp3.dropbox} className={css.dropboxIcon}><span>Dropbox</span></a>
+                        <a href={mp3.drive} className={css.driveIcon}><span>Drive</span></a>
+                    </li>
                 </ul>
             </div>
 
