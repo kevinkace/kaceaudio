@@ -5,6 +5,7 @@ export default {
     ],
     data: {
         Companion: {
+            live       : true,
             title      : 'Companion',
             img        : 'companion.jpg',
             href       : 'https://soundcloud.com/kace-1/companion/s-oDIAyumVxtG',

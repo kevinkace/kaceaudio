@@ -20,3 +20,29 @@
         width: 1.3em;
     }
 }
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dir {
+    display: inline-block;
+    overflow: hidden;
+
+    span {
+        display: inline-block;
+        position: relative;
+        top: 0.45em;
+        animation: dir 1s infinite linear;
+    }
+}
+
+@keyframes dir {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
