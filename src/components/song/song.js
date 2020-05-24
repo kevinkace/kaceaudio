@@ -20,14 +20,14 @@ function Song({ song }) {
 
             <div className={ css.details }>
                 <p className={css.p}>
-                    download:
+                    <span className={css.downloadLabel}>download:</span>
                     <a href={soundcloud} className={css.soundcloud}><img src={soundcloudIcon} alt='soundcloud' /></a>
                     <a href={wav.dropbox} className={css.dropbox}><img src={dropboxIcon} alt='dropbox' /></a>
                     <a href={wav.drive} className={css.drive}><img src={driveIcon} alt='drive' /></a>
                 </p>
 
                 <p className={css.p}>
-                    <Link to='/songs/Companion'>full info <span className={ css.dir }><span>→</span></span></Link>
+                    <Link to='/songs/Companion' className={ css.dir }>full info</Link>
                 </p>
             </div>
 

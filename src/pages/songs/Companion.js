@@ -9,11 +9,13 @@ import css from './songs.module.css';
 
 import songs from '../../data/songs';
 
+import imgData from '../../images/companion.jpg';
+
 export default function IndexPage() {
     const { title, img, href, embed, wav, mp3, soundcloud } = songs.data.Companion;
 
     return <Layout>
-        <SEO title='Companion' meta={[{ name: "robots", content: "noindex" }]}/>
+        <SEO title='Companion' description='Newest track by Kace, free download and streaming. A neuro funk throwback.' image={imgData}/>
 
         <h1>Companion</h1>
 
