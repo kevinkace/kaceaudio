@@ -47,13 +47,3 @@
         background-image: url('../../icons/play.svg');
     }
 }
-
-.player {
-    height: 2em;
-    filter: invert(1);
-    max-width: 100%;
-
-    &:focus {
-        outline: none;
-    }
-}

@@ -8,13 +8,16 @@ import menuIcon from '../../icons/menu.svg';
 
 function Links({ onRoute = () => {} }) {
   const links = [{
-    href : '/',
+    href  : '/',
     label : 'music'
   }, {
-    href : '/samples',
+    href  : '/samples',
     label : 'samples'
   }, {
-    href : '/info',
+    href  : '/songs/Companion',
+    label : 'songs'
+  }, {
+    href  : '/info',
     label : 'info'
   }]
 
