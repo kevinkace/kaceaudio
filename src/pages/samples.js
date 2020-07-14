@@ -13,7 +13,7 @@ export default function SamplesPage() {
 
     return (
         <Layout>
-            <SEO title='Kace samples' description='Free wav samples of drums, bass, and everything else' />
+            <SEO title='Kace samples' description='Free wave samples of drums, bass, and everything else' />
 
             <div className={css.filter}>
                 filter:

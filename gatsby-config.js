@@ -5,12 +5,20 @@ module.exports = {
     author      : `@kaceaudio`,
   },
   plugins: [
+    `gatsby-transformer-csv`,
     `gatsby-plugin-react-helmet`,
     {
       resolve : `gatsby-source-filesystem`,
       options : {
         name : `images`,
         path : `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve : `gatsby-source-filesystem`,
+      options : {
+        name : `data`,
+        path : `${__dirname}/src/data`,
       },
     },
     `gatsby-transformer-sharp`,
