@@ -1,0 +1,21 @@
+.links {
+    max-width: 600px;
+    margin: 2em auto 0;
+
+    li a {
+        display: block;
+        padding: 1em 0;
+        margin: 1.4em 0;
+
+        border: solid 1px #fff;
+        text-align: center;
+        text-decoration: none;
+
+        transition: background 0.15s, color 0.15s;
+
+        &:hover {
+            background: #eee;
+            color: #000;
+        }
+    }
+}

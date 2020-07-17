@@ -4,6 +4,8 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Image from '../components/image-2';
 
+import Links from '../components/links';
+
 import css from './info.module.css';
 
 export default function SecondPage() {
@@ -23,7 +25,7 @@ export default function SecondPage() {
 
                     <div>
                         <dt>location</dt>
-                        <dd>Seattle, Wa</dd>
+                        <dd>Seattle, WA</dd>
                     </div>
 
                     <div>
@@ -40,5 +42,7 @@ export default function SecondPage() {
 
             <p>Composer, sound designer, and engineer. Started in audio as a drum &amp; bass dj and producer in Ontario Canada, outside Toronto. Received an Honours Diploma from The Harris Institute in producing/engineering. Had a short stint as the product specialist for Steinberg Canada, and recording engineer before moving to Seattle.</p>
         </div>
+
+        <Links />
     </Layout>;
 };
