@@ -8,15 +8,20 @@ import css from './layout.module.css';
 
 import soundcloudIcon from '../../icons/soundcloud.svg';
 import twitterIcon from '../../icons/twitter.svg';
+import bandcampIcon from '../../icons/bandcamp.svg';
 
 const links = [{
   href : 'https://soundcloud.com/kace-1',
   icon : soundcloudIcon,
-  alt  : 'soundcloud'
+  alt  : 'SoundCloud'
 }, {
   href : 'https://twitter.com/kaceaudio',
   icon : twitterIcon,
-  alt  : 'twitter'
+  alt  : 'Twitter'
+}, {
+  href : 'https://kace.bandcamp.com',
+  icon : bandcampIcon,
+  alt  : 'Bandcamp'
 }];
 
 function Layout({ children }) {
@@ -41,7 +46,7 @@ function Layout({ children }) {
         <div>© {new Date().getFullYear()}</div>
 
         <div className={css.links}>
-          {links.map(({ href, icon, alt }) => <a href={href} key={alt}><img src={icon} alt={alt} /></a>)}
+          {links.map(({ href, icon, alt }) => <a href={href} key={alt} title={alt}><img src={icon} alt={alt} /></a>)}
         </div>
 
       </footer>
