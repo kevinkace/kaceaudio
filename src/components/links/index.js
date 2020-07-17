@@ -11,6 +11,9 @@ const links = [{
 }, {
     href  : 'https://twitter.com/kaceaudio',
     label : 'Twitter'
+}, {
+    href  : 'https://kaceaudio.com/songs/Companion',
+    label : 'newest song: Companion'
 }];
 
 export default function Links() {
