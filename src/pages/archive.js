@@ -12,7 +12,7 @@ export default function ArchivePage() {
 
     return (
         <Layout>
-            <SEO title='Kace Archive' description="You don't know where you're going if you don't know where you've been" />
+            <SEO title='Archive' description="You don't know where you're going if you don't know where you've been" />
 
             <h2>Songs</h2>
 

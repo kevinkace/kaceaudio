@@ -22,7 +22,7 @@ function Songs() { // eslint-disable-line no-unused-vars
 
 export default function IndexPage() {
     return <Layout>
-        <SEO title='Kace Audio' description='DnB producer. Download songs, and samples.' />
+        <SEO title='Home' description='DnB producer. Download songs, and samples.' />
 
         <p><Link to='/songs/Companion'>Companion</Link> is now available to stream and download.</p>
 

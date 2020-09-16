@@ -18,7 +18,7 @@ export default function SamplesPage() {
 
     return (
         <Layout>
-            <SEO title='Kace samples' description='Free wave samples of drums, bass, and everything else' />
+            <SEO title='Samples' description='Free wave samples of drums, bass, and everything else' />
 
 
             <header className={css.header}>

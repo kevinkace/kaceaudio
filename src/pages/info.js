@@ -10,7 +10,7 @@ import css from './info.module.css';
 
 export default function SecondPage() {
     return <Layout>
-        <SEO title='Kace info' description='Composer, sound designer, and engineer'/>
+        <SEO title='Info' description='Composer, sound designer, and engineer'/>
 
         <div className={css.info}>
             {/* <div>
