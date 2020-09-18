@@ -1,6 +1,11 @@
 export const songArchive = [{
     year  : 2003,
     songs : [{
+        title   : "Cell Block",
+        artist  : "Kace",
+        bitrate : 320,
+        href    : "https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Cell+Block+-+Kace.mp3"
+    }, {
         title   : "Breakin'Borders Dub",
         artist  : "Kace & Andyslim",
         bitrate : 320,
