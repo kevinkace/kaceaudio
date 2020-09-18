@@ -11,3 +11,13 @@
         margin-left: 0.1em;
     }
 }
+
+.tracklist {
+
+    font-size: 0.9em;;
+
+    li {
+        margin-left: 2em;
+    }
+}
+
