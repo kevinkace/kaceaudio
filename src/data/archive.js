@@ -21,6 +21,22 @@ export const songArchive = [{
         bitrate : 320,
         href    : "https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Freezeline+-+Kace+%26+Andyslim.mp3"
     }]
+}, {
+    year  : 2004,
+    songs : [{
+        title   : "Sub Scrypt",
+        artist  : "Kace & Andyslim",
+        bitrate : 320,
+        href    : "https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Sub+Scrypt+-+Kace+%26+Andyslim.mp3"
+    }]
+}, {
+    year  : 2006,
+    songs : [{
+        title   : "Dust Bowl",
+        artist  : "Kace",
+        bitrate : 320,
+        href    : "https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Dustbowl+-+Kace.mp33"
+    }]
 }];
 
 export const setArchive = [{

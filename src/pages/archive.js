@@ -28,6 +28,8 @@ export default function ArchivePage() {
                 </div>
             )}
 
+            <hr className={css.hr}/>
+
             <h2>Sets</h2>
 
             {setArchive.map(({ year, sets }) =>
