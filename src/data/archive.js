@@ -35,7 +35,7 @@ export const songArchive = [{
         title   : "Dust Bowl",
         artist  : "Kace",
         bitrate : 320,
-        href    : "https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Dustbowl+-+Kace.mp33"
+        href    : "https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Dustbowl+-+Kace.mp3"
     }]
 }];
 
