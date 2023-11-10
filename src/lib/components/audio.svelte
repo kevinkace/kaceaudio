@@ -7,7 +7,7 @@
     };
 </script>
 
-<audio controls class="player" autoPlay={autoplay} style:zoom={style.zoom} style:width={style.width}>
+<audio controls controlsList="nodownload noplaybackrate" class="player" autoPlay={autoplay} style:zoom={style.zoom} style:width={style.width}>
     <source {src} type='audio/mpeg' />
 </audio>
 
