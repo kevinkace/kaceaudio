@@ -47,7 +47,7 @@ button:focus {
 h1 {
     margin-bottom: 0.6em;
 
-    font-family: display;
+    font-family: var(--font-display);
     font-size: 1.6em;
 
     span {
@@ -58,7 +58,7 @@ h1 {
 h2 {
     margin-bottom: 0.6em;
 
-    font-family: display;
+    font-family: var(--font-);
     font-size: 1.3em;
 }
 
@@ -93,6 +93,6 @@ dd {
     margin: 0 0 0 0.4em;
 
     a {
-        color: colorText;
+        color: var(--color-text);
     }
 }

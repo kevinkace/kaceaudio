@@ -5,6 +5,8 @@
     import twitterIcon from '$lib/icons/twitter.svg';
     import bandcampIcon from '$lib/icons/bandcamp.svg';
 
+    import Header from "$lib/components/header.svelte";
+
     const links = [{
         href : 'https://soundcloud.com/kace-1',
         icon : soundcloudIcon,
@@ -22,7 +24,7 @@
 
 <div class="layout">
     <div>
-        <!-- <Header siteTitle={data.site.siteMetadata.title} /> -->
+        <Header/>
         <main>
             <slot />
         </main>
@@ -43,7 +45,6 @@
 </div>
 
 <style lang="postcss">
-
     @value mqFixed, mqSplit from "../global.css";
 
     .layout {
