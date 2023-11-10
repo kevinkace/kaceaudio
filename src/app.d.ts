@@ -7,6 +7,31 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+
+	type Mp3 = {
+		dropbox: string;
+		drive: string;
+	}
+
+	type Wav = {
+		dropbox: string;
+		drive: string;
+	}
+
+	type Song = {
+		live: boolean;
+		title: string;
+		img: string;
+		href: string;
+		embed: string;
+		soundcloud: string;
+		mp3: Mp3;
+		wav: Wav;
+	}
+
+	type Songs = {
+		[key: string]: Song;
+	};
 }
 
 export {};

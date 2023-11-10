@@ -1,3 +1,11 @@
+<script>
+    import songs from '$lib/data/songs';
+
+    import Song from '$lib/components/song.svelte';
+
+    const filteredTitles = songs.titles.filter(title => songs.data[title].live)
+</script>
+
 <p>
     <a href='/songs/Companion'>Companion</a> is now available to stream and download.
 </p>
@@ -13,7 +21,9 @@
 <h2 class='songs'>songs</h2>
 
 <div class='discog'>
-    <!-- <Songs /> -->
+    {#each filteredTitles as title}
+        <Song song={songs.data[title]} />
+    {/each}
 </div>
 
 <style lang="postcss">
