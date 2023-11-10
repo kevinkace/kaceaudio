@@ -45,7 +45,8 @@
 </div>
 
 <style lang="postcss">
-    @value mqFixed, mqSplit from "../global.css";
+    @custom-media --mq-fixed screen and (min-width: 1000px);
+    @custom-media --mq-split screen and (min-width: 600px);
 
     .layout {
         display: flex;
@@ -56,7 +57,7 @@
         margin: 0 auto;
         padding: 0 4%;
 
-        @media mqFixed {
+        @media (--mq-fixed) {
             padding: 0;
         }
     }
@@ -87,12 +88,12 @@
 
     .split {
 
-        @media mqSplit {
+        @media (--mq-split) {
             display: grid;
             grid-template-columns: 1fr 2fr;
         }
 
-        @media mqFixed {
+        @media (--mq-fixed) {
             grid-template-columns: 1fr 3fr;
         }
 
@@ -100,13 +101,13 @@
             &:first-child {
                 margin-bottom: 2em;
 
-                @media mqSplit {
+                @media (--mq-split) {
                     margin-bottom: 0;
                 }
             }
 
             &:last-child {
-                @media mqSplit {
+                @media (--mq-split) {
                     border-left: solid 1px rgba(255, 255, 255, 0.2);
                     padding-left: 2em;
                     margin-left: 2em;

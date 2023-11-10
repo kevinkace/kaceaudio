@@ -1,18 +1,19 @@
 @import "minireset.css";
 
-@value mqFixed: screen and (min-width: 1000px);
-@value mqSplit: screen and (min-width: 600px);
+@custom-media --mq-fixed screen and (min-width: 1000px);
+@custom-media --mq-split screen and (min-width: 600px);
 
 :root {
     --color-link: #aaa;
     --color-text: #eee;
+    --color-bg: #000;
 
     --font-display: Orbitron;
 }
 
 html {
     background: black;
-    color: colorText;
+    color: var(--color-text);
     font: normal 16px/1.6 Oxanium;
     letter-spacing: 0.05em;
 }

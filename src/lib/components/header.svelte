@@ -36,15 +36,16 @@
           </div>
         </nav>
     </header>
-    <div class:showNav={showNav} class:hideNav={!showNav} >
+    <div class="mobNav" class:showNav={showNav} class:hideNav={!showNav} >
         {#each links as { href, label }}
             <a class="navLink" {href} on:click={() => { showNav = false; }}>{label}</a>
         {/each}
     </div>
-</div>;
+</div>
 
 <style lang="postcss">
-    @value mqFixed, mqSplit from "../global.css";
+    @custom-media --mq-fixed screen and (min-width: 1000px);
+    @custom-media --mq-split screen and (min-width: 600px);
 
     .mobNavBg {
         position: relative;
@@ -61,7 +62,13 @@
         z-index: 1;
 
         border-bottom: solid 1px #fff;
-        background-color: #000;
+        background-color: var(--color-bg);
+    }
+
+    @media (--mq-fixed) {
+        .header {
+            background: #000;
+        }
     }
 
     .logo {
@@ -71,31 +78,31 @@
         font-size: 13vw;
         line-height: 1;
 
-        @media mqSplit {
+        @media (--mq-split) {
             font-size: 3em;
         }
     }
 
     nav {
-        button {
+        & button {
             display: block;
             margin-bottom: 0.2em;
 
-            img {
+            & img {
                 display: block;
                 opacity: 0.8;
                 width: 8.7vw;
             }
 
-            @media mqSplit {
+            @media (--mq-split) {
                 display: none;
             }
         }
 
-        > div {
+        & > div {
             display: none;
 
-            @media mqSplit {
+            @media (--mq-split) {
                 display: block;
                 margin-top: 1.6em;
             }
@@ -130,18 +137,16 @@
 
         transition: transform 0.2s;
 
-        @media mqSplit {
+        @media (--mq-split) {
             display: none;
         }
     }
 
     .showNav {
-        composes: mobNav;
         transform: translateY(100%);
     }
 
     .hideNav {
-        composes: mobNav;
         transform: translateY(0);
     }
 </style>
