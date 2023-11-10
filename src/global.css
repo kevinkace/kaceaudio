@@ -1,0 +1,98 @@
+@import "minireset.css";
+
+@value mqFixed: screen and (min-width: 1000px);
+@value mqSplit: screen and (min-width: 600px);
+
+:root {
+    --color-link: #aaa;
+    --color-text: #eee;
+
+    --font-display: Orbitron;
+}
+
+html {
+    background: black;
+    color: colorText;
+    font: normal 16px/1.6 Oxanium;
+    letter-spacing: 0.05em;
+}
+
+button,
+a {
+    padding: 0;
+    margin: 0;
+
+    cursor: pointer;
+
+    opacity: 0.7;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: inherit;
+
+    background: inherit;
+    border: none;
+
+    &:hover {
+        opacity: 1;
+        text-decoration: underline;
+    }
+}
+
+button:focus {
+    outline: none;
+    text-decoration: underline;
+}
+
+h1 {
+    margin-bottom: 0.6em;
+
+    font-family: display;
+    font-size: 1.6em;
+
+    span {
+        font-size: 0.7em;
+    }
+}
+
+h2 {
+    margin-bottom: 0.6em;
+
+    font-family: display;
+    font-size: 1.3em;
+}
+
+h3 {
+    line-height: 1.2
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+
+dl {
+    margin: 0.1em 0 2em;
+    line-height: 1.2;
+
+    div {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 0.4em;
+    }
+}
+
+dt {
+    width: 6em;
+    font-size: 0.8em;
+    color: colorLink;
+}
+
+dd {
+    display: inline-block;
+    margin: 0 0 0 0.4em;
+
+    a {
+        color: colorText;
+    }
+}
