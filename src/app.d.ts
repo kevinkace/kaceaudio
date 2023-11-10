@@ -32,6 +32,18 @@ declare global {
 	type Songs = {
 		[key: string]: Song;
 	};
+
+	type Sample ={
+		title: string;
+		preview: string;
+		href: string;
+		desc: string;
+		tags: string[];
+	}
+
+	type Samples = Sample[];
+
+	type Filter = undefined|string;
 }
 
 export {};
