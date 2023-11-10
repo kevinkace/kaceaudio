@@ -1,2 +1,44 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<p>
+    <a href='/songs/Companion'>Companion</a> is now available to stream and download.
+</p>
+
+<p>
+    There are sample packs from some of my releases (and more) in the <a href='/samples'>samples section</a> - they're free, and open source.
+</p>
+
+<p>
+    Follow me on <a href='https://soundcloud.com/kace-1'>SoundCloud</a>, <a href='https://kace.bandcamp.com'>Bandcamp</a>, or <a href='https://twitter.com/kaceaudio'>Twitter</a>.
+</p>
+
+<h2 class='songs'>songs</h2>
+
+<div class='discog'>
+    <!-- <Songs /> -->
+</div>
+
+<style lang="postcss">
+    @custom-media --mq-fixed screen and (min-width: 1000px);
+    @custom-media --mq-split screen and (min-width: 600px);
+    @custom-media --mq-mid   screen and (min-width: 800px);
+
+    .discog {
+        display: grid;
+
+        margin-bottom: 2em;
+        gap: 1em;
+        grid-template-columns: repeat(1, 1fr);
+
+        @media (--mq-split) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (--mq-mid) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .songs {
+        margin-top: 2em;
+    }
+
+</style>

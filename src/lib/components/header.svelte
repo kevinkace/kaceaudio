@@ -1,7 +1,7 @@
 <script>
     import menuIcon from '$lib/icons/menu.svg';
 
-    export let siteTitle = 'Site Title';
+    export let title = 'Site Title';
 
     const links = [{
         href  : '/',
@@ -23,7 +23,7 @@
 <div class="mobNavBg">
     <header class="header">
         <h1 class="logo">
-          <a href='/'>{siteTitle}</a>
+          <a href='/'>{title}</a>
         </h1>
         <nav>
           <button on:click={() => { showNav = !showNav }}>

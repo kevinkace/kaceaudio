@@ -2,10 +2,12 @@
     import "../global.css";
 
     import soundcloudIcon from '$lib/icons/soundcloud.svg';
-    import twitterIcon from '$lib/icons/twitter.svg';
-    import bandcampIcon from '$lib/icons/bandcamp.svg';
+    import twitterIcon    from '$lib/icons/twitter.svg';
+    import bandcampIcon   from '$lib/icons/bandcamp.svg';
 
     import Header from "$lib/components/header.svelte";
+
+    const title = "kace";
 
     const links = [{
         href : 'https://soundcloud.com/kace-1',
@@ -24,7 +26,7 @@
 
 <div class="layout">
     <div>
-        <Header/>
+        <Header {title}/>
         <main>
             <slot />
         </main>

@@ -2,6 +2,7 @@
 
 @custom-media --mq-fixed screen and (min-width: 1000px);
 @custom-media --mq-split screen and (min-width: 600px);
+@custom-media --mq-mid   screen and (min-width: 800px);
 
 :root {
     --color-link: #aaa;
@@ -9,12 +10,13 @@
     --color-bg: #000;
 
     --font-display: Orbitron;
+    --font-body: Oxanium;
 }
 
 html {
     background: black;
     color: var(--color-text);
-    font: normal 16px/1.6 Oxanium;
+    font: normal 16px/1.6 var(--font-body);
     letter-spacing: 0.05em;
 }
 
@@ -59,7 +61,7 @@ h1 {
 h2 {
     margin-bottom: 0.6em;
 
-    font-family: var(--font-);
+    font-family: var(--font-display);
     font-size: 1.3em;
 }
 
