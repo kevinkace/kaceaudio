@@ -1,18 +1,14 @@
 <script>
-    import { songArchive, setArchive } from '$lib/data/archive';
-    import { pageTitle } from '$lib/helpers/pageTitle';
+    /** @type {import('./$types').PageData}*/
+    export let data;
 
     /** @type {null|string} */
     let showTracklist = null;
 </script>
 
-<svelte:head>
-    <title>{pageTitle('archive')}</title>
-</svelte:head>
-
 <h2>Songs</h2>
 
-{#each songArchive as { year, songs }}
+{#each data.songArchive as { year, songs }}
     <div class="section">
         <h3>{year}</h3>
         <ul>
@@ -27,7 +23,7 @@
 
 <h2>Sets</h2>
 
-{#each setArchive as { year, sets }}
+{#each data.setArchive as { year, sets }}
     <div class="section">
         <h3>{year}</h3>
         <ul>

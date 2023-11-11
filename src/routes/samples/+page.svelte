@@ -4,8 +4,6 @@
 
     import Samples from "$lib/components/samples.svelte";
 
-    import { pageTitle } from "$lib/helpers/pageTitle";
-
 	/** @type {import('./$types').PageData} */
 	export let data;
 
@@ -15,10 +13,6 @@
     let filter = undefined;
     let view = "grid";
 </script>
-
-<svelte:head>
-    <title>{pageTitle("samples")}</title>
-</svelte:head>
 
 <header class="header">
     <div class="filter">

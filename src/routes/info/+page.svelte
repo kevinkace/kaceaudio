@@ -1,11 +1,6 @@
 <script>
     import Links from '$lib/components/links.svelte';
-    import { pageTitle } from '$lib/helpers/pageTitle';
 </script>
-
-<svelte:head>
-    <title>{pageTitle("info")}</title>
-</svelte:head>
 
 <div class="split">
     <!-- <div>

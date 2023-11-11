@@ -1,7 +1,6 @@
 <script>
     import Samples from '$lib/components/samples.svelte';
     import Player from '$lib/components/player.svelte';
-    import { pageTitle } from '$lib/helpers/pageTitle';
 
     /** @type {import('./$types').PageData} */
     export let data;
