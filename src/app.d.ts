@@ -27,13 +27,17 @@ declare global {
 		soundcloud: string;
 		mp3: Mp3;
 		wav: Wav;
+		bpm: number;
+		scale: string;
+		length: string;
 	}
 
 	type Songs = {
 		[key: string]: Song;
 	};
+	// type Songs = Object.<string, Song>
 
-	type Sample ={
+	type Sample = {
 		title: string;
 		preview: string;
 		href: string;
