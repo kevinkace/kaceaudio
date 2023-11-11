@@ -27,9 +27,11 @@
     <div class="section">
         <h3>{year}</h3>
         <ul>
-            {#each sets as {href, title, artist, bitrate, tracklist }}
+            {#each sets as {href, title, artist, bitrate, tracklist, duration }}
                 <li>
                     <strong>{title}</strong> - {artist}
+                    |
+                    {duration}
                     |
                     <a href={href}>mp3 ({bitrate})</a>
                     {#if tracklist}
