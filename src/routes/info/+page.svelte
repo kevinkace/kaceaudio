@@ -27,11 +27,7 @@
                 <dt>origin</dt>
                 <dd>Toronto, On</dd>
             </div>
-
-            <div>
-                <dt>contact</dt>
-                <dd><a href='https://twitter.com/kaceaudio'>@kaceaudio</a></dd>
-            </div>
+ -->
         </dl>
     </div>
 

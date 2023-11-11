@@ -2,22 +2,16 @@
     import "../global.css";
 
     import soundcloudIcon from '$lib/icons/soundcloud.svg';
-    // import twitterIcon    from '$lib/icons/twitter.svg';
     import bandcampIcon   from '$lib/icons/bandcamp.svg';
 
     import Header from "$lib/components/header.svelte";
 
-    import { page } from '$app/stores';
     import { buildTitle } from "$lib/helpers/pageTitle";
 
     const links = [{
         href : 'https://soundcloud.com/kace-1',
         icon : soundcloudIcon,
         alt  : 'SoundCloud'
-    // }, {
-    //     href : 'https://twitter.com/kaceaudio',
-    //     icon : twitterIcon,
-    //     alt  : 'Twitter'
     }, {
         href : 'https://kace.bandcamp.com',
         icon : bandcampIcon,
@@ -31,7 +25,6 @@
 </svelte:head>
 
 <div class="layout">
-    <!-- {JSON.stringify($page)} -->
     <div>
         <Header/>
         <main>
@@ -44,8 +37,8 @@
 
         <div class="links">
             {#each links as {href, icon, alt}}
-                <a href={href} title={alt}>
-                    <img src={icon} alt={alt} />
+                <a {href} title={alt}>
+                    <img src={icon} {alt} />
                 </a>
             {/each}
         </div>
