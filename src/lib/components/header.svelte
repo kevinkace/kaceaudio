@@ -5,7 +5,7 @@
 
     import menuIcon from '$lib/icons/menu.svg';
 
-    export let title = 'Site Title';
+    import { title } from "$lib/data/common";
 
     const links = [{
     //     href  : '/',

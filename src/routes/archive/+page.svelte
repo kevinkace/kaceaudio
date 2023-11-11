@@ -1,13 +1,17 @@
 <script>
+    import { songArchive, setArchive } from '$lib/data/archive';
+    import { buildTitle } from '$lib/helpers/pageTitle';
 
-
-import { songArchive, setArchive } from '$lib/data/archive';
-
-let showTracklist = null;
-
+    /** @type {null|string} */
+    let showTracklist = null;
 </script>
 
+<svelte:head>
+    <title>{buildTitle('archive')}</title>
+</svelte:head>
+
 <h2>Songs</h2>
+
 {#each songArchive as { year, songs }}
     <div class="section">
         <h3>{year}</h3>

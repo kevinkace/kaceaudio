@@ -7,7 +7,8 @@
 
     import Header from "$lib/components/header.svelte";
 
-    const title = "kace";
+    import { page } from '$app/stores';
+    import { buildTitle } from "$lib/helpers/pageTitle";
 
     const links = [{
         href : 'https://soundcloud.com/kace-1',
@@ -24,9 +25,15 @@
     }];
 </script>
 
+
+<svelte:head>
+    <title>{buildTitle()}</title>
+</svelte:head>
+
 <div class="layout">
+    <!-- {JSON.stringify($page)} -->
     <div>
-        <Header {title}/>
+        <Header/>
         <main>
             <slot />
         </main>
