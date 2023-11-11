@@ -57,6 +57,7 @@ export const setArchive = [{
     {
         title     : 'Oktober',
         artist    : 'Kace',
+        duration  : '54:25',
         bitrate   : 320,
         href      : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/sets/Oktober+Mix+-+Kace+(2003).mp3',
         tracklist : [
