@@ -19,8 +19,6 @@
     </div>
 {/each}
 
-<hr class="hr"/>
-
 <h2>Sets</h2>
 
 {#each data.setArchive as { year, sets }}
@@ -78,9 +76,5 @@
         li {
             margin-left: 2em;
         }
-    }
-
-    .hr {
-        margin: 3em 0;
     }
 </style>
