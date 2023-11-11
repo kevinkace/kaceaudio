@@ -1,4 +1,8 @@
 <script>
+	import { page } from '$app/stores';
+
+    import { matchRoute } from '$lib/helpers/matchRoute';
+
     import menuIcon from '$lib/icons/menu.svg';
 
     export let title = 'Site Title';
@@ -31,7 +35,7 @@
           </button>
           <div>
             {#each links as { href, label }}
-                <a class="navLink" {href} >{label}</a>
+                <a class="navLink" class:active={matchRoute($page.route.id, href)} {href} >{label}</a>
             {/each}
           </div>
         </nav>
