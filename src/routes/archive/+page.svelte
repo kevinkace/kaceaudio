@@ -32,19 +32,21 @@
                     <strong>{title}</strong> - {artist}
                     |
                     <a href={href}>mp3 ({bitrate})</a>
-                    |
-                    <button on:click={() => {
-                        showTracklist = showTracklist === title ? null : title;
-                    }}>
-                        tracklist
-                    </button>
+                    {#if tracklist}
+                        |
+                        <button on:click={() => {
+                            showTracklist = showTracklist === title ? null : title;
+                        }}>
+                            tracklist
+                        </button>
 
-                    {#if showTracklist === title}
-                        <ol class="tracklist">
-                            {#each tracklist as track}
-                                <li>{track}</li>
-                            {/each}
-                        </ol>
+                        {#if showTracklist === title}
+                            <ol class="tracklist">
+                                {#each tracklist as track}
+                                    <li>{track}</li>
+                                {/each}
+                            </ol>
+                        {/if}
                     {/if}
                 </li>
             {/each}
