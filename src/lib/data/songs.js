@@ -20,7 +20,10 @@ export default {
             wav : {
                 dropbox : 'https://www.dropbox.com/s/rwpjz47sim9vyu9/Companion%20-%20Kace.wav?dl=0',
                 drive   : 'https://drive.google.com/file/d/1I-JmT2ri14uj5ZmKgoeqIs5Vb1a6YH2P/view?usp=sharing'
-            }
+            },
+            bpm    : 168,
+            scale  : 'E phrygian',
+            length : '4:16'
         },
         Split : {
             title      : 'Split',

@@ -1,12 +1,8 @@
 <script>
-    /** @type string */
-    export let href,
-        /** @type string */
-        title,
-        /** @type string */
-        img,
-        /** @type string */
-        embed;
+    /** @type Song */
+    export let song;
+
+    const { title, img, href, embed } = song;
 
     let player = false;
 </script>

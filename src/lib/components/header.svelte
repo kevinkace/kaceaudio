@@ -4,9 +4,9 @@
     export let title = 'Site Title';
 
     const links = [{
-        href  : '/',
-        label : 'music'
-    }, {
+    //     href  : '/',
+    //     label : 'music'
+    // }, {
         href  : '/samples',
         label : 'samples'
     }, {

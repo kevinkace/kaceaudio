@@ -87,35 +87,4 @@
             }
         }
     }
-
-    .split {
-
-        @media (--mq-split) {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-        }
-
-        @media (--mq-fixed) {
-            grid-template-columns: 1fr 3fr;
-        }
-
-        & > * {
-            &:first-child {
-                margin-bottom: 2em;
-
-                @media (--mq-split) {
-                    margin-bottom: 0;
-                }
-            }
-
-            &:last-child {
-                @media (--mq-split) {
-                    border-left: solid 1px rgba(255, 255, 255, 0.2);
-                    padding-left: 2em;
-                    margin-left: 2em;
-                }
-            }
-        }
-    }
-
 </style>

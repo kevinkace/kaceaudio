@@ -12,10 +12,12 @@
 
     const _embed = embed.replace('auto_play=false', 'auto_play=true');
 
+    const playerSong = { href, title, img, embed: _embed };
+
 </script>
 
 <div>
-    <Player {href} {title} {img} embed={_embed}></Player>
+    <Player song={playerSong} />
 
     <div class="details">
         <p>
