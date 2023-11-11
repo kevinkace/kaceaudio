@@ -1,9 +1,10 @@
 <script>
-    import songs from '$lib/data/songs';
+    /** @type {import('./$types').PageData}*/
+    export let data;
 
     import Song from '$lib/components/song.svelte';
 
-    const filteredTitles = songs.titles.filter(title => songs.data[title].live)
+    const filteredTitles = data.songs.titles.filter(title => data.songs.data[title].live)
 </script>
 
 <p>
@@ -22,7 +23,7 @@
 
 <div class='discog'>
     {#each filteredTitles as title}
-        <Song song={songs.data[title]} />
+        <Song song={data.songs.data[title]} />
     {/each}
 </div>
 
