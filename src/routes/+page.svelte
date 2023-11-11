@@ -12,11 +12,11 @@
 </p>
 
 <p>
-    There are sample packs from some of my releases (and more) in the <a href='/samples'>samples section</a> - they're free, and open source.
+    There are sample packs in the <a href='/samples'>samples section</a>.
 </p>
 
 <p>
-    Follow me on <a href='https://soundcloud.com/kace-1'>SoundCloud</a>, <a href='https://kace.bandcamp.com'>Bandcamp</a>, or <a href='https://twitter.com/kaceaudio'>Twitter</a>.
+    <a href='https://soundcloud.com/kace-1'>SoundCloud</a> | <a href='https://kace.bandcamp.com'>Bandcamp</a>
 </p>
 
 <h2 class='songs'>songs</h2>

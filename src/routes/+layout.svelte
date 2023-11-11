@@ -2,7 +2,7 @@
     import "../global.css";
 
     import soundcloudIcon from '$lib/icons/soundcloud.svg';
-    import twitterIcon    from '$lib/icons/twitter.svg';
+    // import twitterIcon    from '$lib/icons/twitter.svg';
     import bandcampIcon   from '$lib/icons/bandcamp.svg';
 
     import Header from "$lib/components/header.svelte";
@@ -13,10 +13,10 @@
         href : 'https://soundcloud.com/kace-1',
         icon : soundcloudIcon,
         alt  : 'SoundCloud'
-    }, {
-        href : 'https://twitter.com/kaceaudio',
-        icon : twitterIcon,
-        alt  : 'Twitter'
+    // }, {
+    //     href : 'https://twitter.com/kaceaudio',
+    //     icon : twitterIcon,
+    //     alt  : 'Twitter'
     }, {
         href : 'https://kace.bandcamp.com',
         icon : bandcampIcon,

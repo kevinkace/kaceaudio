@@ -1,7 +1,7 @@
 <script>
     import soundcloudIcon from '$lib/icons/soundcloud.svg';
     import bandcampIcon from '$lib/icons/bandcamp.svg';
-    import twitterIcon from '$lib/icons/twitter.svg';
+    // import twitterIcon from '$lib/icons/twitter.svg';
 
     const links = [{
         href  : 'https://soundcloud.com/kace-1',
@@ -11,10 +11,10 @@
         href  : 'https://kace.bandcamp.com',
         label : 'Bandcamp',
         icon  : bandcampIcon
-    }, {
-        href  : 'https://twitter.com/kaceaudio',
-        label : 'Twitter',
-        icon  : twitterIcon
+    // }, {
+    //     href  : 'https://twitter.com/kaceaudio',
+    //     label : 'Twitter',
+    //     icon  : twitterIcon
     }, {
         href  : 'https://kaceaudio.com/songs/Companion',
         label : 'newest song: Companion'
