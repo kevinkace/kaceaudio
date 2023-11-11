@@ -1,10 +1,10 @@
 <script>
     import Links from '$lib/components/links.svelte';
-    import { buildTitle } from '$lib/helpers/pageTitle';
+    import { pageTitle } from '$lib/helpers/pageTitle';
 </script>
 
 <svelte:head>
-    <title>{buildTitle("info")}</title>
+    <title>{pageTitle("info")}</title>
 </svelte:head>
 
 <div class="split">

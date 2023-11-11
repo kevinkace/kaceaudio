@@ -1,12 +1,16 @@
 <script>
     import "../global.css";
 
+	import { page } from '$app/stores';
+
     import soundcloudIcon from '$lib/icons/soundcloud.svg';
     import bandcampIcon   from '$lib/icons/bandcamp.svg';
 
     import Header from "$lib/components/header.svelte";
 
-    import { buildTitle } from "$lib/helpers/pageTitle";
+    import { pageTitle } from "$lib/helpers/pageTitle";
+
+    import { title, desc, img } from "$lib/data/common";
 
     const links = [{
         href : 'https://soundcloud.com/kace-1',
@@ -17,11 +21,17 @@
         icon : bandcampIcon,
         alt  : 'Bandcamp'
     }];
+
+    $:meta = Object.assign({ title, desc, img }, $page.data.meta || {});
 </script>
 
 
 <svelte:head>
-    <title>{buildTitle()}</title>
+    <title>{pageTitle(meta.title)}</title>
+
+    <meta property="og:title" content={ pageTitle(meta.title) } />
+    <meta property="og:description" content={meta.desc } />
+    <meta property="og:image" content={meta.img } />
 </svelte:head>
 
 <div class="layout">

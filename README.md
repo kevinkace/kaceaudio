@@ -5,29 +5,4 @@
 now with svelte-kit!
 
 ## Todo:
-- page titles
-- seo
-- GA, id: `UA-166828766-1`
 
-Web manifest:
-```js
-{
-      resolve : 'gatsby-plugin-manifest',
-      options : {
-        name             : 'gatsby-starter-default',
-        short_name       : 'starter',
-        start_url        : '/',
-        background_color : '#111',
-        theme_color      : '#0f1',
-        display          : 'minimal-ui',
-        icon             : 'src/images/icon.png',
-      },
-
-}
-```
-
-Metadata:
-
-    title       : 'Kace',
-    description : 'music',
-    author      : '@kaceaudio',

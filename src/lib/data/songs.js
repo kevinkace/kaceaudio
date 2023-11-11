@@ -8,6 +8,7 @@ export default {
         Companion : {
             live       : true,
             title      : 'Companion',
+            desc       : 'latest drum & bass music from kace',
             img        : 'companion.jpg',
             href       : 'https://soundcloud.com/kace-1/companion/s-oDIAyumVxtG',
             // eslint-disable-next-line max-len

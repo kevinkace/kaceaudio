@@ -5,8 +5,8 @@ import { title } from '$lib/data/common.js';
  * @param {string} [value]
  * @returns {string}
  */
-export function buildTitle(value) {
-    if (!value) {
+export function pageTitle(value) {
+    if (!value || value === title) {
         return title;
     }
 

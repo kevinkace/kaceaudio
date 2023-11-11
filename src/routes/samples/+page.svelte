@@ -4,7 +4,7 @@
 
     import Samples from "$lib/components/samples.svelte";
 
-    import { buildTitle } from "$lib/helpers/pageTitle";
+    import { pageTitle } from "$lib/helpers/pageTitle";
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-    <title>{buildTitle("samples")}</title>
+    <title>{pageTitle("samples")}</title>
 </svelte:head>
 
 <header class="header">

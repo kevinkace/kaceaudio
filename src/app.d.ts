@@ -21,6 +21,7 @@ declare global {
 	type Song = {
 		live: boolean;
 		title: string;
+		desc: string;
 		img: string;
 		href: string;
 		embed: string;

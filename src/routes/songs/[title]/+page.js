@@ -13,6 +13,11 @@ export function load({ params }) {
 
     return {
         song,
-        samples
+        samples,
+        meta : {
+            title : song.title,
+            desc  : song.desc,
+            img   : `/images/songs/${song.img}`
+        }
     };
 }

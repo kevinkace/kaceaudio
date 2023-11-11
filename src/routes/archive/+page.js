@@ -5,8 +5,8 @@ export function load() {
     return {
         samples,
         meta : {
-            title : 'samples',
-            desc  : 'synth, drum, bass, fx...'
+            title : 'archive',
+            desc  : 'the glory days of KW dnb'
         }
     };
 }

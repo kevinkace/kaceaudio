@@ -1,13 +1,13 @@
 <script>
     import { songArchive, setArchive } from '$lib/data/archive';
-    import { buildTitle } from '$lib/helpers/pageTitle';
+    import { pageTitle } from '$lib/helpers/pageTitle';
 
     /** @type {null|string} */
     let showTracklist = null;
 </script>
 
 <svelte:head>
-    <title>{buildTitle('archive')}</title>
+    <title>{pageTitle('archive')}</title>
 </svelte:head>
 
 <h2>Songs</h2>

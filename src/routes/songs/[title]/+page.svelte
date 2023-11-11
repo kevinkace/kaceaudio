@@ -1,17 +1,13 @@
 <script>
     import Samples from '$lib/components/samples.svelte';
     import Player from '$lib/components/player.svelte';
-    import { buildTitle } from '$lib/helpers/pageTitle';
+    import { pageTitle } from '$lib/helpers/pageTitle';
 
     /** @type {import('./$types').PageData} */
     export let data;
 
     const { song, samples } = data;
 </script>
-
-<svelte:head>
-    <title>{buildTitle(song.title)}</title>
-</svelte:head>
 
 <h1>{song.title}</h1>
 
