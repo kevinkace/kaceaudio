@@ -4,6 +4,7 @@
     import { matchRoute } from '$lib/helpers/matchRoute';
 
     import menuIcon from '$lib/icons/menu.svg';
+    import kaceLogo from '$lib/icons/kace-logo-0.svg';
 
     import { title } from "$lib/data/common";
 
@@ -27,7 +28,9 @@
 <div class="mobNavBg">
     <header class="header">
         <h1 class="logo">
-          <a href='/'>{title}</a>
+            <a href='/'>
+                <img src={kaceLogo} alt={title}/>
+            </a>
         </h1>
         <nav>
           <button on:click={() => { showNav = !showNav }}>
@@ -82,8 +85,22 @@
         font-size: 13vw;
         line-height: 1;
 
+        mask-image: var(--chrome-mask-image);
+
+        &:hover {
+            mask-image: unset;
+        }
+
+        img {
+            display: block;
+            height: 1em;
+            width: auto;
+
+            filter: invert(1);
+        }
+
         @media (--mq-split) {
-            font-size: 3em;
+            font-size: 2em;
         }
     }
 
@@ -108,7 +125,6 @@
 
             @media (--mq-split) {
                 display: block;
-                margin-top: 1.6em;
             }
         }
     }
@@ -118,6 +134,10 @@
         position: relative;
         margin: 0 0 0 0.6em;
         padding-right: 0.7em;
+
+        font-family: var(--font-display);
+
+        mask-image: var(--chrome-mask-image);
 
         &:not(:last-child):after {
             content: "|";
