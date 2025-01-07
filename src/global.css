@@ -10,7 +10,14 @@
     --color-bg: #000;
 
     --font-display: Orbitron;
-    --font-body: Oxanium;
+    --font-body: "Cairo";
+
+    --chrome-mask-image: linear-gradient(
+        rgba(0, 0, 0, 0.4) 0%,
+        black 30%,
+        black 70%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
 }
 
 html {
@@ -129,4 +136,8 @@ dd {
             }
         }
     }
+}
+
+.chrome {
+    mask-image: var(--chrome-mask-image);
 }
