@@ -12,7 +12,7 @@
         icon  : bandcampIcon
     }, {
         href  : 'https://kaceaudio.com/songs/Companion',
-        label : 'newest song: Companion'
+        label : 'song: Companion'
     }];
 </script>
 
