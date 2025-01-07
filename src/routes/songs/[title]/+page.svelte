@@ -8,8 +8,6 @@
     const { song, samples } = data;
 </script>
 
-<h1>{song.title}</h1>
-
 <div class="split">
     <div>
         <div class="player">
@@ -31,23 +29,15 @@
     </div>
 
     <div>
-        <h2>info</h2>
+        <h1>{song.title}</h1>
 
         <dl>
             <div>
-                <dt>title</dt>
-                <dd>{song.title}</dd>
-            </div>
-            <div>
                 <dt>BPM</dt>
-                <dd>song.bpm</dd>
+                <dd>{song.bpm}</dd>
             </div>
             <div>
-                <dt>scale</dt>
-                <dd>{song.scale}</dd>
-            </div>
-            <div>
-                <dt>length</dt>
+                <dt>duration</dt>
                 <dd>{song.length}</dd>
             </div>
         </dl>
