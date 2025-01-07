@@ -23,7 +23,6 @@ export default {
                 drive   : 'https://drive.google.com/file/d/1I-JmT2ri14uj5ZmKgoeqIs5Vb1a6YH2P/view?usp=sharing'
             },
             bpm    : 168,
-            scale  : 'E phrygian',
             length : '4:16'
         },
         Split : {

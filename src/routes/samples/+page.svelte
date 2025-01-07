@@ -58,6 +58,7 @@
 
     .filter {
         display: flex;
+        align-items: center;
         margin-bottom: 1.6em;
         font-size: 0.8em;
 
