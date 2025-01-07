@@ -8,22 +8,22 @@
 </script>
 
 <p>
-    <a href='/songs/Companion'>Companion</a> is now available to stream and download.
+    I make a lot of music but I rarely share it publicly. I should get better about that.
 </p>
 
 <p>
-    There are sample packs in the <a href='/samples'>samples section</a>.
+    During covid I posted one track to this website and some socials. I'm still quite happy with it. It's the song embedded below.
 </p>
 
 <p>
-    <a href='https://soundcloud.com/kace-1'>SoundCloud</a> | <a href='https://kace.bandcamp.com'>Bandcamp</a>
+    I have some sample packs in the <a href='/samples'>samples section</a>, and here is my <a href='https://soundcloud.com/kace-1'>SoundCloud</a> and <a href='https://kace.bandcamp.com'>Bandcamp</a>.
 </p>
-
-<h2 class='songs'>songs</h2>
 
 <div class='discog'>
     {#each filteredTitles as title}
+    <div>
         <Song song={data.songs.data[title]} />
+    </div>
     {/each}
 </div>
 
