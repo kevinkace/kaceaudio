@@ -79,16 +79,33 @@
     }
 
     .logo {
+        position: relative;
         margin: 0;
 
         text-transform: lowercase;
         font-size: 13vw;
         line-height: 1;
 
-        mask-image: var(--chrome-mask-image);
-
         &:hover {
             mask-image: unset;
+
+            &:after {
+                transform: scale(1.3);
+            }
+        }
+
+        &:after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: var(--chrome-image) no-repeat center center/cover;
+            opacity: 0.8;
+
+            transition: transform 0.2s;
         }
 
         img {
