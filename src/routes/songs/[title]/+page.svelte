@@ -48,6 +48,14 @@
 </div>
 
 <style lang="postcss">
+    h1 {;
+        margin-left: -0.6em;
+        padding: 0.3em 0.6em;
+
+        font-weight: bold;
+
+        background: #1b1b1b;
+    }
     .player {
         margin-bottom: 2em;
     }
