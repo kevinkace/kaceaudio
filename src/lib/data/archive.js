@@ -3,10 +3,16 @@ export const songArchive = [
         year  : '199x-2002',
         songs : [
             {
-                title   : 'Dust Puddle',
+                title   : 'Dust Puddle - 2025 remaster',
                 artist  : 'Kace',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+remaster.mp3'
+                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+remaster.mp3'
+            },
+            {
+                title   : 'Dust Puddle - 2025 edit',
+                artist  : 'Kace',
+                bitrate : 320,
+                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+edit.mp3'
             }
         ]
     },
@@ -47,6 +53,18 @@ export const songArchive = [
                 artist  : 'Kace & Andyslim',
                 bitrate : 320,
                 href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Sub+Scrypt+-+Kace+%26+Andyslim.mp3'
+            },
+            {
+                title   : 'Booking - 2025 remaster',
+                artist  : 'Sek, Kace & Andyslim',
+                bitrate : 320,
+                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Booking+-+Sek%2C+Kace+%26+Andyslim+-+2025+remaster.mp3'
+            },
+            {
+                title   : 'Freakish - 2025 remaster',
+                artist  : 'Kace & unknown',
+                bitrate : 320,
+                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Freakish+-+Kace+%26+unknown+-+2025+remaster.mp3'
             }
         ]
     },
