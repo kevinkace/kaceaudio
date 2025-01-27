@@ -11,6 +11,7 @@
     import { pageTitle } from "$lib/helpers/pageTitle";
 
     import { title, desc, img } from "$lib/data/common";
+    import MediaPlayer from "$lib/components/media-player.svelte";
 
     const links = [{
         href : 'https://soundcloud.com/kace-1',
@@ -55,6 +56,8 @@
 
     </footer>
 </div>
+
+<MediaPlayer />
 
 <style lang="postcss">
     @custom-media --mq-fixed screen and (min-width: 1000px);
