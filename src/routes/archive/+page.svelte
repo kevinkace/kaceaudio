@@ -1,8 +1,10 @@
 <script>
+    import Sep from '$lib/components/Sep.svelte';
+
     /** @type {import('./$types').PageData}*/
     export let data;
 
-    /** @type {null|string} */
+    /** @type {null<Sep/>string} */
     let showTracklist = null;
 </script>
 
@@ -13,7 +15,7 @@
         <h3>{year}</h3>
         <ul>
             {#each songs as { href, title, artist, bitrate }}
-                <li><strong>{title}</strong> - {artist} | <a href={href}>mp3 ({bitrate})</a></li>
+                <li><strong>{title}</strong> - {artist} <Sep/> <a href={href}>mp3 ({bitrate})</a></li>
             {/each}
         </ul>
     </div>
@@ -28,12 +30,12 @@
             {#each sets as {href, title, artist, bitrate, tracklist, duration }}
                 <li>
                     <strong>{title}</strong> - {artist}
-                    |
+                    <Sep/>
                     {duration}
-                    |
+                    <Sep/>
                     <a href={href}>mp3 ({bitrate})</a>
                     {#if tracklist}
-                        |
+                        <Sep/>
                         <button on:click={() => {
                             showTracklist = showTracklist === title ? null : title;
                         }}>
@@ -59,13 +61,25 @@
         margin-bottom: 2em;
 
         h3 {
-            margin-bottom: 0.3em;
+            margin-bottom: 0.8em;
+            font-size: 1.2em;
         }
 
         ul {
             border-left: solid 2px #999;
-            padding-left: 0.6em;
+            padding-left: 0.8em;
             margin-left: 0.1em;
+
+            li {
+                padding: 0.15em 0 0.15em 0.3em;
+
+                &:first-child {
+                    padding-top: 0.3em;
+                }
+                &:last-child {
+                    padding-bottom: 0.3em;
+                }
+            }
         }
     }
 
