@@ -161,6 +161,10 @@
             position: absolute;
             right: -0.1em;
         }
+
+        &:last-child {
+            padding-right: 0;
+        }
     }
 
     .active {
