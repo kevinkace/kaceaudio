@@ -5,6 +5,8 @@
 @custom-media --mq-mid   screen and (min-width: 800px);
 
 :root {
+
+    --site-width: 1000px;
     --color-link: #aaa;
     --color-text: #eee;
     --color-bg: #000;
