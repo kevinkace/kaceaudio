@@ -6,12 +6,12 @@
     import soundcloudIcon from '$lib/icons/soundcloud.svg';
     import bandcampIcon   from '$lib/icons/bandcamp.svg';
 
-    import Header from "$lib/components/header.svelte";
+    import Header      from "$lib/components/header.svelte";
+    import MediaPlayer from "$lib/components/media-player/media-player.svelte";
 
     import { pageTitle } from "$lib/helpers/pageTitle";
 
     import { title, desc, img } from "$lib/data/common";
-    import MediaPlayer from "$lib/components/media-player.svelte";
 
     const links = [{
         href : 'https://soundcloud.com/kace-1',
