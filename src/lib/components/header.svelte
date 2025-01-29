@@ -74,7 +74,7 @@
 
     @media (--mq-fixed) {
         .header {
-            background: #000;
+            background: unset;
         }
     }
 
