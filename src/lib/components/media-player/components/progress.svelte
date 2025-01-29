@@ -11,8 +11,9 @@
         return `${minutes}:${secs.toString().padStart(2, '0')}`;
     }
 
-    export let elapsed = 15;
-    export let duration = 61;
+    let { elapsed = 0, duration = 0 } = $props();
+    let position = $derived((elapsed / duration) * 100);
+
 </script>
 
 <div class="container">
@@ -20,7 +21,9 @@
 
     <div class="slider">
         <div class="slider-bar">
-            <button class="handle"/>
+            <div class="handle-zone">
+                <button class="handle" aria-label="scrubber" style:left={position + "%"}></button>
+            </div>
         </div>
     </div>
 
@@ -29,6 +32,8 @@
 
 <style lang="postcss">
     .container {
+        --handle-width: 0.8em;
+
         flex-basis: 100%;
         display: flex;
         align-items: center;
@@ -51,6 +56,30 @@
         position: relative;
         width: 100%;
         height: 3px;
+        background: #666;
+    }
+
+    .handle-zone {
+        position: absolute;
+        top: 0;
+        right: calc(var(--handle-width) / 2);
+        bottom: 0;
+        left: calc(var(--handle-width) / 2);
+    }
+
+    .handle {
+
+        position: absolute;
+        top: 50%;
+
+        margin-top: calc(var(--handle-width) / -2);
+        margin-left: calc(var(--handle-width) / -2);
+        height: var(--handle-width);
+        width: var(--handle-width);
+        padding: 0;
+
+        border-radius: 50%;
+
         background: #666;
     }
 

@@ -1,6 +1,7 @@
 <script>
     import PrevIcon from '$lib/icons/prev.svg?raw';
     import PlayIcon from '$lib/icons/play2.svg?raw';
+    import PauseIcon from '$lib/icons/pause.svg?raw';
     import NextIcon from '$lib/icons/next.svg?raw';
     import VolumeIcon from '$lib/icons/volume-high.svg?raw';
     import CloseIcon from '$lib/icons/close.svg?raw';
@@ -9,12 +10,32 @@
     import Progress from './components/progress.svelte';
     import Details from './components/details.svelte';
 
+    let elapsed = $state(0);
+    let duration = $state(0);
+
+    let src = $state("https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+remaster.mp3");
+
+    let cover = 'https://placehold.co/150';
+    let title = 'Dust Puddle - 2025 remaster';
+    let artist = 'Kace';
+    let soundcloud = 'https://soundcloud.com/kace-1';
+
+    /** @type {HTMLAudioElement} */
+    let audio;
+
+    let playing = $state(false);
+
     function prev() {
         console.log('prev');
     }
 
-    function play() {
-        console.log('play');
+    function togglePlay() {
+        playing = !playing;
+        if (playing) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
     }
 
     function next() {
@@ -25,39 +46,30 @@
         console.log('close');
     }
 
-    /**
-     * Convert seconds to time format
-     * @param {number} seconds
-     * @returns {string} time format
-     * @example toTime(65) // 1:05
-     */
-    function toTime(seconds) {
-        let minutes = Math.floor(seconds / 60);
-        let secs = Math.floor(seconds % 60) || 0;
-        return `${minutes}:${secs.toString().padStart(2, '0')}`;
+    function onloadedmetadata() {
+        console.log('loaded');
+        duration = audio.duration;
     }
 
-    let elapsed = 15;
-    let duration = 61;
-    let cover = 'https://placehold.co/150';
-    let title = 'Dust Puddle - 2025 remaster';
-    let artist = 'Kace';
-    let soundcloud = 'https://soundcloud.com/kace-1';
+    function ontimeupdate() {
+        elapsed = audio.currentTime;
+        duration = audio.duration;
+    }
 </script>
 
 <div class="wrapper">
     <div class="content">
-        <button class="close" on:click={close}>
+        <button class="close" onclick={close}>
             {@html CloseIcon}
         </button>
 
         <div class="controls">
-            <button class="prev" on:click={prev}>{@html PrevIcon}</button>
-            <button class="play" on:click={play}>{@html PlayIcon}</button>
-            <button class="next" on:click={next}>{@html NextIcon}</button>
+            <button class="prev" onclick={prev}>{@html PrevIcon}</button>
+            <button class="play" onclick={togglePlay}>{@html playing ? PauseIcon : PlayIcon}</button>
+            <button class="next" onclick={next}>{@html NextIcon}</button>
         </div>
 
-        <Progress elapsed={elapsed} duration={duration} />
+        <Progress {elapsed} {duration} />
 
         <div>
             <button class="volume">{@html VolumeIcon}</button>
@@ -70,9 +82,24 @@
         </div>
 
     </div>
+
+    <audio
+        bind:this={audio}
+        {ontimeupdate}
+        {onloadedmetadata}
+        controls
+        {src}
+    ></audio>
 </div>
 
 <style lang="postcss">
+
+    audio {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+    }
+
     .wrapper {
         position: fixed;
         bottom: 0;
