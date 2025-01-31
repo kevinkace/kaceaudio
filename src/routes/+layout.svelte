@@ -57,7 +57,7 @@
     </footer>
 </div>
 
-<MediaPlayer />
+<MediaPlayer/>
 
 <style lang="postcss">
     @custom-media --mq-fixed screen and (min-width: 1000px);

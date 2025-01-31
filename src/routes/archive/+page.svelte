@@ -1,11 +1,15 @@
 <script>
     import Sep from '$lib/components/Sep.svelte';
 
+    import { getQueue } from '$lib/components/media-player/queue.svelte.js';
+
     /** @type {import('./$types').PageData}*/
     export let data;
 
-    /** @type {null<Sep/>string} */
+    /** @type {null|string} */
     let showTracklist = null;
+
+    const queue = getQueue();
 </script>
 
 <h2>Songs</h2>
@@ -14,8 +18,8 @@
     <div class="section">
         <h3>{year}</h3>
         <ul>
-            {#each songs as { href, title, artist, bitrate }}
-                <li><strong>{title}</strong> - {artist} <Sep/> <a href={href}>mp3 ({bitrate})</a></li>
+            {#each songs as song}
+                <li><strong>{song.title}</strong> - {song.artist} <Sep/> <a on:click|preventDefault={() => { queue.add(song); }} href={song.href}>mp3 ({song.bitrate})</a></li>
             {/each}
         </ul>
     </div>

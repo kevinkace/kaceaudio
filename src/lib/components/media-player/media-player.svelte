@@ -10,44 +10,27 @@
     import Progress from './components/progress.svelte';
     import Details from './components/details.svelte';
 
+    import { getQueue } from './queue.svelte.js';
+
+    const queue = getQueue();
+
+    const debug = false;
+
     let elapsed = $state(0);
     let duration = $state(0);
-
-    let src = $state("https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+remaster.mp3");
-
-    let cover = 'https://placehold.co/150';
-    let title = 'Dust Puddle - 2025 remaster';
-    let artist = 'Kace';
-    let soundcloud = 'https://soundcloud.com/kace-1';
 
     /** @type {HTMLAudioElement} */
     let audio;
 
-    let playing = $state(false);
-
-    function prev() {
-        console.log('prev');
-    }
-
-    function togglePlay() {
-        playing = !playing;
-        if (playing) {
-            audio.play();
-        } else {
-            audio.pause();
-        }
-    }
-
-    function next() {
-        console.log('next');
-    }
+    setTimeout(() => {
+        queue.setAudioElement(audio);
+    }, 1000);
 
     function close() {
         console.log('close');
     }
 
     function onloadedmetadata() {
-        console.log('loaded');
         duration = audio.duration;
     }
 
@@ -57,16 +40,16 @@
     }
 </script>
 
-<div class="wrapper">
+<div class="wrapper" class:wrapperShow={queue.queue.playlist.length}>
     <div class="content">
         <button class="close" onclick={close}>
             {@html CloseIcon}
         </button>
 
         <div class="controls">
-            <button class="prev" onclick={prev}>{@html PrevIcon}</button>
-            <button class="play" onclick={togglePlay}>{@html playing ? PauseIcon : PlayIcon}</button>
-            <button class="next" onclick={next}>{@html NextIcon}</button>
+            <button class="prev" onclick={queue.prev}>{@html PrevIcon}</button>
+            <button class="play" onclick={queue.togglePlay}>{@html queue.queue.playing ? PauseIcon : PlayIcon}</button>
+            <button class="next" onclick={queue.next}>{@html NextIcon}</button>
         </div>
 
         <Progress {elapsed} {duration} />
@@ -75,29 +58,51 @@
             <button class="volume">{@html VolumeIcon}</button>
         </div>
 
-        <Details cover={cover} title={title} artist={artist} />
+        <Details/>
 
         <div>
-            <a class="sc-link" href={soundcloud}>{@html SoundcloudIcon}</a>
+            <a class="sc-link" href={queue.queue.playlist[queue.queue.current]?.soundcloud}>{@html SoundcloudIcon}</a>
         </div>
 
     </div>
+</div>
 
+<div class:debug={debug}>
     <audio
         bind:this={audio}
         {ontimeupdate}
         {onloadedmetadata}
-        controls
-        {src}
+        onload={() => console.log("test")}
+        controls={debug}
+        src={queue.queue.playlist[queue.queue.current]?.href}
     ></audio>
+
+    {#if debug}
+        <pre>
+{JSON.stringify(queue, null, 2)}
+{queue.queue.playlist[queue.queue.current]?.href}
+        </pre>
+    {/if}
 </div>
 
 <style lang="postcss">
 
-    audio {
+    .debug {
         position: fixed;
         top: 10px;
-        right: 10px;
+        left: 10px;
+        background: #000b;
+        border: solid 1px #fffb;
+        z-index: 1000;
+
+        audio {
+            display: block;
+        }
+
+        pre {
+            font-family: monospace;
+            font-size: 0.8em;
+        }
     }
 
     .wrapper {
@@ -112,6 +117,13 @@
 
         background: black;
         border-top: solid 1px #999;
+
+        transform: translateY(100%);
+        transition: transform 200ms;
+
+        &.wrapperShow {
+            transform: translateY(0);
+        }
     }
 
     .content {

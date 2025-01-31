@@ -1,18 +1,20 @@
 <script>
-    import SoundcloudIcon from "$lib/icons/soundcloud.svg?raw";
+    import { getQueue } from "../queue.svelte.js";
 
     export let title = 'Title';
     export let artist = 'Artist';
     export let cover = 'https://via.placeholder.com/150';
     export let soundcloud = 'https://soundcloud.com/kace-1';
+
+    let queue = getQueue();
 </script>
 
 <div class="currently-playing">
-    <img src={cover} alt="cover" class="cover"/>
+    <img src={queue.queue.playlist[queue.queue.current]?.cover} alt="cover" class="cover"/>
 
     <div class="content">
-        <div class="artist">{artist}</div>
-        <div class="title">{title}</div>
+        <div class="artist">{queue.queue.playlist[queue.queue.current]?.artist}</div>
+        <div class="title">{queue.queue.playlist[queue.queue.current]?.title}</div>
     </div>
 
 </div>
