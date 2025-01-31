@@ -14,6 +14,13 @@ export function getQueue() {
      */
     function setAudioElement(audio) {
         queue.audio = audio;
+
+        queue.audio.addEventListener("ended", () => {
+            queue = {
+                ...queue,
+                playing : false
+            };
+        });
     }
 
     /**
@@ -21,11 +28,14 @@ export function getQueue() {
      * @param {object} song
      */
     function add(song) {
-        queue.playlist = [ ...queue.playlist, song ];
+        let playlist = [ ...queue.playlist, song ];
 
-        queue.current = queue.playlist.length - 1;
-
-        queue.playing = true;
+        queue = {
+            ...queue,
+            playlist : playlist,
+            current  : playlist.length - 1,
+            playing  : true
+        };
 
         queue.audio?.addEventListener("canplay", () => {
             queue.audio?.play();
@@ -34,23 +44,27 @@ export function getQueue() {
 
 
     function next() {
-        queue.current += queue.current;
+        let current = queue.current + 1;
 
-        if (queue.current >= queue.playlist.length) {
-            queue.current = 0;
+        if (current >= queue.playlist.length) {
+            current = 0;
         }
+
+        queue = { ...queue, current };
     }
 
     function prev() {
-        queue.current -= queue.current;
+        let current = queue.current - 1;
 
-        if (queue.current < 0) {
-            queue.current = queue.playlist.length -1;
+        if (current < 0) {
+            current = queue.playlist.length -1;
         }
+
+        queue = { ...queue, current };
     }
 
     function togglePlay() {
-        queue.playing = !queue.playing;
+        queue = { ...queue, playing : !queue.playing };
 
         if (queue.playing) {
             queue.audio?.play();
@@ -60,8 +74,6 @@ export function getQueue() {
     }
 
     function getCurrent() {
-        console.log(queue.playlist);
-        console.log(queue.current);
         return queue.playlist[queue.current] || {};
     }
 
