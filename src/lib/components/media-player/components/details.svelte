@@ -1,16 +1,18 @@
 <script>
     import { getQueue } from "../queue.svelte.js";
 
-    export let title = 'Title';
-    export let artist = 'Artist';
-    export let cover = 'https://via.placeholder.com/150';
-    export let soundcloud = 'https://soundcloud.com/kace-1';
+    let title = 'Title';
+    let artist = 'Artist';
+    let cover = 'https://via.placeholder.com/150';
+    let soundcloud = 'https://soundcloud.com/kace-1';
 
     let queue = getQueue();
+
+    let src = $derived(queue.queue.playlist[queue.queue.current]?.cover || cover);
 </script>
 
 <div class="currently-playing">
-    <img src={queue.queue.playlist[queue.queue.current]?.cover} alt="cover" class="cover"/>
+    <img {src} alt="cover" class="cover"/>
 
     <div class="content">
         <div class="artist">{queue.queue.playlist[queue.queue.current]?.artist}</div>

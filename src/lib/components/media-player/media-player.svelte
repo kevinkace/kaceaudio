@@ -14,7 +14,7 @@
 
     const queue = getQueue();
 
-    const debug = false;
+    const debug = true;
 
     let elapsed = $state(0);
     let duration = $state(0);
@@ -47,9 +47,9 @@
         </button>
 
         <div class="controls">
-            <button class="prev" onclick={queue.prev}>{@html PrevIcon}</button>
-            <button class="play" onclick={queue.togglePlay}>{@html queue.queue.playing ? PauseIcon : PlayIcon}</button>
-            <button class="next" onclick={queue.next}>{@html NextIcon}</button>
+            <button class="prev" onclick={() => queue.prev()}>{@html PrevIcon}</button>
+            <button class="play" onclick={() => queue.togglePlay()}>{@html queue.queue.playing ? PauseIcon : PlayIcon}</button>
+            <button class="next" onclick={() => queue.next()}>{@html NextIcon}</button>
         </div>
 
         <Progress {elapsed} {duration} />
