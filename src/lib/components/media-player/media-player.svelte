@@ -149,7 +149,7 @@
         color: white;
         font-size: 1.5em;
 
-        :global(svg) {
+        & :global(svg) {
             display: block;
             height: 1em;
             width: auto;

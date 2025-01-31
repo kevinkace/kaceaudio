@@ -21,7 +21,6 @@ export function getQueue() {
      * @param {object} song
      */
     function add(song) {
-        console.log(song);
         queue.playlist = [ ...queue.playlist, song ];
 
         queue.current = queue.playlist.length - 1;

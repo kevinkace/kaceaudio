@@ -1,7 +1,12 @@
 <script>
     import Sep from '$lib/components/Sep.svelte';
 
+    import DownloadIcon from '$lib/icons/download.svg?raw'
+
     import { getQueue } from '$lib/components/media-player/queue.svelte.js';
+    import DownloadLink from '$lib/components/DownloadLink.svelte';
+    import PlayButton from '$lib/components/PlayButton.svelte';
+    import SongPlayButton from '$lib/components/SongPlayButton.svelte';
 
     /** @type {import('./$types').PageData}*/
     export let data;
@@ -20,14 +25,12 @@
         <ul>
             {#each songs as song}
                 <li>
-                    <strong>{song.title}</strong> -
-                    {song.artist} <Sep/>
-                    <a
-                        on:click|preventDefault={() => { queue.add(song); }}
-                        href={song.href}
-                    >
-                        mp3 ({song.bitrate})
-                    </a>
+                    <SongPlayButton {song}>
+                        <strong>{song.title}</strong> -
+                        {song.artist}
+                    </SongPlayButton>
+                    <Sep />
+                    <DownloadLink {song} />
                 </li>
             {/each}
         </ul>
@@ -92,6 +95,9 @@
             margin-left: 0.1em;
 
             li {
+                display: flex;
+                align-items: center;
+
                 padding: 0.15em 0 0.15em 0.3em;
 
                 &:first-child {
