@@ -19,7 +19,16 @@
         <h3>{year}</h3>
         <ul>
             {#each songs as song}
-                <li><strong>{song.title}</strong> - {song.artist} <Sep/> <a on:click|preventDefault={() => { queue.add(song); }} href={song.href}>mp3 ({song.bitrate})</a></li>
+                <li>
+                    <strong>{song.title}</strong> -
+                    {song.artist} <Sep/>
+                    <a
+                        on:click|preventDefault={() => { queue.add(song); }}
+                        href={song.href}
+                    >
+                        mp3 ({song.bitrate})
+                    </a>
+                </li>
             {/each}
         </ul>
     </div>
@@ -31,24 +40,32 @@
     <div class="section">
         <h3>{year}</h3>
         <ul>
-            {#each sets as {href, title, artist, bitrate, tracklist, duration }}
+            {#each sets as song}
                 <li>
-                    <strong>{title}</strong> - {artist}
+                    <strong>{song.title}</strong> - {song.artist}
                     <Sep/>
-                    {duration}
+                    {song.duration}
                     <Sep/>
-                    <a href={href}>mp3 ({bitrate})</a>
-                    {#if tracklist}
+
+                    <a
+
+                        on:click|preventDefault={() => { queue.add(song); }}
+                        href={song.href}
+                    >
+                        mp3 ({song.bitrate})
+                    </a>
+
+                    {#if song.tracklist}
                         <Sep/>
                         <button on:click={() => {
-                            showTracklist = showTracklist === title ? null : title;
+                            showTracklist = showTracklist === song.title ? null : song.title;
                         }}>
                             tracklist
                         </button>
 
-                        {#if showTracklist === title}
+                        {#if showTracklist === song.title}
                             <ol class="tracklist">
-                                {#each tracklist as track}
+                                {#each song.tracklist as track}
                                     <li>{track}</li>
                                 {/each}
                             </ol>
