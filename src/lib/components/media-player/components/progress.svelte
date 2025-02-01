@@ -5,9 +5,10 @@
      * @returns {string} time format
      * @example toTime(65) // 1:05
      */
-    function toTime(seconds) {
+    function toTime(seconds = 0) {
         let minutes = Math.floor(seconds / 60);
         let secs = Math.floor(seconds % 60) || 0;
+
         return `${minutes}:${secs.toString().padStart(2, '0')}`;
     }
 
