@@ -15,7 +15,7 @@ export function getQueue() {
     function setAudioElement(audio) {
         queue.audio = audio;
 
-        queue.audio.addEventListener("ended", () => {
+        queue.audio?.addEventListener("ended", () => {
             queue = {
                 ...queue,
                 playing : false
@@ -48,6 +48,10 @@ export function getQueue() {
 
         if (current >= queue.playlist.length) {
             current = 0;
+        }
+
+        if (queue.audio) {
+            queue.audio.currentTime = 0;
         }
 
         queue = { ...queue, current };
