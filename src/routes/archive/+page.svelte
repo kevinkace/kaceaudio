@@ -22,9 +22,9 @@
 {#each data.songArchive as { year, songs }}
     <div class="section">
         <h3>{year}</h3>
-        <ul>
+        <ul class="list">
             {#each songs as song}
-                <li>
+                <li class="listItem">
                     <SongPlayButton {song}>
                         <strong>{song.title}</strong> -
                         {song.artist}
@@ -42,16 +42,19 @@
 {#each data.setArchive as { year, sets }}
     <div class="section">
         <h3>{year}</h3>
-        <ul>
+        <ul class="list">
             {#each sets as song}
-                <li>
-                    <strong>{song.title}</strong> - {song.artist}
+                <li class="listItem">
+                    <SongPlayButton {song}>
+                        <strong>{song.title}</strong> -
+                        {song.artist}
+                    </SongPlayButton>
+
                     <Sep/>
                     {song.duration}
                     <Sep/>
 
                     <a
-
                         on:click|preventDefault={() => { queue.add(song); }}
                         href={song.href}
                     >
@@ -89,14 +92,15 @@
             font-size: 1.2em;
         }
 
-        ul {
+        ul.list {
             border-left: solid 2px #999;
             padding-left: 0.8em;
             margin-left: 0.1em;
 
-            li {
+            li.listItem {
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
 
                 padding: 0.15em 0 0.15em 0.3em;
 
@@ -111,8 +115,10 @@
     }
 
     .tracklist {
-        font-size: 0.9em;;
-        margin-bottom: 2em;
+        width: 100%;
+        margin: 0.6em 0 1em 1.6em;
+
+        font-size: 0.9em;
 
         li {
             margin-left: 2em;
