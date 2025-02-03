@@ -10,11 +10,15 @@
     import Progress from './components/progress.svelte';
     import Details from './components/details.svelte';
 
+    import {soundcloud} from '$lib/data/common.js';
+
     import { getQueue } from './queue.svelte.js';
 
     const queue = getQueue();
 
     const debug = false;
+
+    let current = $derived(queue.queue.playlist[queue.queue.current]);
 
     /** @type {HTMLAudioElement} */
     let audio;
@@ -62,7 +66,7 @@
         <Details/>
 
         <div>
-            <a class="sc-link" href={queue.queue.playlist[queue.queue.current]?.soundcloud}>{@html SoundcloudIcon}</a>
+            <a class="sc-link" href={current?.soundcloud || soundcloud}>{@html SoundcloudIcon}</a>
         </div>
 
     </div>
@@ -73,39 +77,18 @@
         bind:this={audio}
         {ontimeupdate}
         {onloadedmetadata}
-        onload={() => console.log("test")}
         controls={debug}
-        src={queue.queue.playlist[queue.queue.current]?.href}
+        src={current?.href}
     ></audio>
 
     {#if debug}
         <pre>
 {JSON.stringify(queue, null, 2)}
-{queue.queue.playlist[queue.queue.current]?.href}
         </pre>
     {/if}
 </div>
 
 <style lang="postcss">
-
-    .debug {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        background: #000b;
-        border: solid 1px #fffb;
-        z-index: 1000;
-
-        audio {
-            display: block;
-        }
-
-        pre {
-            font-family: monospace;
-            font-size: 0.8em;
-        }
-    }
-
     .wrapper {
         position: fixed;
         bottom: 0;
@@ -169,7 +152,6 @@
 
         opacity: 0.4;
         font-size: 0.8em;
-
     }
 
     .controls {
@@ -193,10 +175,6 @@
 
     .slider {
         position: relative;
-
-        .slider-bar {
-
-        }
     }
 
     .volume {
@@ -205,5 +183,22 @@
 
     .sc-link {
         @extend .iconButton;
+    }
+    .debug {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background: #000b;
+        border: solid 1px #fffb;
+        z-index: 1000;
+
+        audio {
+            display: block;
+        }
+
+        pre {
+            font-family: monospace;
+            font-size: 0.8em;
+        }
     }
 </style>
