@@ -11,16 +11,16 @@
 
     import { pageTitle } from "$lib/helpers/pageTitle";
 
-    import { title, desc, img } from "$lib/data/common";
+    import { title, desc, img, links as _links } from "$lib/data/common";
 
     const links = [{
-        href : 'https://soundcloud.com/kace-1',
+        href : _links.soundcloud.href,
         icon : soundcloudIcon,
-        alt  : 'SoundCloud'
+        alt  : _links.soundcloud.label
     }, {
-        href : 'https://kace.bandcamp.com',
+        href : _links.bandcamp.href,
         icon : bandcampIcon,
-        alt  : 'Bandcamp'
+        alt  : _links.bandcamp.label
     }];
 
     $:meta = Object.assign({ title, desc, img }, $page.data.meta || {});

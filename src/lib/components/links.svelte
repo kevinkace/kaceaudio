@@ -2,13 +2,15 @@
     import soundcloudIcon from '$lib/icons/soundcloud.svg';
     import bandcampIcon from '$lib/icons/bandcamp.svg';
 
+    import { links as _links } from '$lib/data/common.js';
+
     const links = [{
-        href  : 'https://soundcloud.com/kace-1',
-        label : 'SoundCloud',
+        href  : _links.soundcloud.href,
+        label : _links.soundcloud.label,
         icon  : soundcloudIcon
     }, {
-        href  : 'https://kace.bandcamp.com',
-        label : 'Bandcamp',
+        href  : _links.bandcamp.href,
+        label : _links.bandcamp.label,
         icon  : bandcampIcon
     }, {
         href  : 'https://kaceaudio.com/songs/Companion',

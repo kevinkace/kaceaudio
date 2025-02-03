@@ -10,7 +10,7 @@
     import Progress from './components/progress.svelte';
     import Details from './components/details.svelte';
 
-    import {soundcloud} from '$lib/data/common.js';
+    import { links } from '$lib/data/common.js';
 
     import { getQueue } from './queue.svelte.js';
 
@@ -66,7 +66,7 @@
         <Details/>
 
         <div>
-            <a class="sc-link" href={current?.soundcloud || soundcloud}>{@html SoundcloudIcon}</a>
+            <a class="sc-link" href={current?.soundcloud || links.soundcloud.href}>{@html SoundcloudIcon}</a>
         </div>
 
     </div>
