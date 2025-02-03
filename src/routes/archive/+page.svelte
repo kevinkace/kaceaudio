@@ -22,6 +22,7 @@
 {#each data.songArchive as { year, songs }}
     <div class="section">
         <h3>{year}</h3>
+
         <ul class="list">
             {#each songs as song}
                 <li class="listItem">
@@ -42,6 +43,7 @@
 {#each data.setArchive as { year, sets }}
     <div class="section">
         <h3>{year}</h3>
+
         <ul class="list">
             {#each sets as song}
                 <li class="listItem">
@@ -86,6 +88,10 @@
 <style lang="postcss">
     .section {
         margin-bottom: 2em;
+
+        & + h2 {
+            margin-top: 2.4em;
+        }
 
         h3 {
             margin-bottom: 0.8em;
