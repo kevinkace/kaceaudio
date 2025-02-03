@@ -26,7 +26,7 @@
 
     setTimeout(() => {
         queue.setAudioElement(audio);
-    }, 1000);
+    }, 100);
 
     function close() {
         console.log('close');

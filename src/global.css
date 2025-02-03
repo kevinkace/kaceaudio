@@ -117,8 +117,6 @@ dd {
     }
 }
 
-
-
 .split {
     @media (--mq-split) {
         display: grid;
