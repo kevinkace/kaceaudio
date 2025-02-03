@@ -1,21 +1,17 @@
 <script>
     import { getQueue } from "../queue.svelte.js";
 
-    let title = 'Title';
-    let artist = 'Artist';
-    let cover = 'https://picsum.photos/200';
-
     let queue = getQueue();
 
-    let src = $derived(queue.queue.playlist[queue.queue.current]?.cover || cover);
+    let current = $derived(queue.queue.playlist[queue.queue.current]);
 </script>
 
 <div class="currently-playing">
-    <img {src} alt="cover" class="cover"/>
+    <img src={current?.cover || 'https://picsum.photos/200'} alt="cover" class="cover"/>
 
     <div class="content">
-        <div class="artist">{queue.queue.playlist[queue.queue.current]?.artist}</div>
-        <div class="title">{queue.queue.playlist[queue.queue.current]?.title}</div>
+        <div class="artist">{current?.artist || 'Artist'}</div>
+        <div class="title">{current?.title || 'Title'}</div>
     </div>
 
 </div>
@@ -53,9 +49,5 @@
     .artist {
         font-size: 0.9em;
         opacity: 0.8;
-    }
-
-    .sc-link {
-        grid-area: sc-link;
     }
 </style>
