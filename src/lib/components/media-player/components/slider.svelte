@@ -1,8 +1,6 @@
 <script>
     import { getQueue } from "../queue.svelte";
 
-    let { value = $bindable() } = $props();
-
     let queue = getQueue();
 </script>
 
