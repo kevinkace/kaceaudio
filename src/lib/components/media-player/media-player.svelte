@@ -14,10 +14,7 @@
 
     const queue = getQueue();
 
-    const debug = true;
-
-    let elapsed = $state(0);
-    let duration = $state(0);
+    const debug = false;
 
     /** @type {HTMLAudioElement} */
     let audio;
@@ -31,12 +28,16 @@
     }
 
     function onloadedmetadata() {
-        duration = audio.duration;
+        queue.queue.duration = audio.duration;
     }
 
     function ontimeupdate() {
-        elapsed = audio.currentTime;
-        duration = audio.duration;
+        queue.queue.currentTime = audio.currentTime;
+        queue.queue.duration = audio.duration;
+
+        if (!queue.queue.scrubbing) {
+            queue.queue.progressTime = audio.currentTime;
+        }
     }
 </script>
 
@@ -52,7 +53,7 @@
             <button class="next" onclick={() => queue.next()}>{@html NextIcon}</button>
         </div>
 
-        <Progress {elapsed} {duration} />
+        <Progress/>
 
         <div>
             <button class="volume">{@html VolumeIcon}</button>

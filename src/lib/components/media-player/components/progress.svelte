@@ -1,4 +1,9 @@
 <script>
+    import { getQueue } from "../queue.svelte";
+    import Slider from "./slider.svelte";
+
+    let queue = getQueue();
+
     /**
      * Convert seconds to time format
      * @param {number} seconds
@@ -6,29 +11,22 @@
      * @example toTime(65) // 1:05
      */
     function toTime(seconds = 0) {
-        let minutes = Math.floor(seconds / 60);
+        let minutes = Math.floor(seconds / 60) || 0;
         let secs = Math.floor(seconds % 60) || 0;
 
         return `${minutes}:${secs.toString().padStart(2, '0')}`;
     }
 
-    let { elapsed = 0, duration = 0 } = $props();
-    let position = $derived((elapsed / duration) * 100);
-
 </script>
 
 <div class="container">
-    <div class="elapsed">{toTime(elapsed)}</div>
+    <div class="elapsed">{toTime(queue.queue.currentTime)}</div>
 
     <div class="slider">
-        <div class="slider-bar">
-            <div class="handle-zone">
-                <button class="handle" aria-label="scrubber" style:left={position + "%"}></button>
-            </div>
-        </div>
+        <Slider/>
     </div>
 
-    <div class="duration">{toTime(duration)}</div>
+    <div class="duration">{toTime(queue.queue.duration)}</div>
 </div>
 
 <style lang="postcss">

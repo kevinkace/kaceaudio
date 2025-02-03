@@ -2,7 +2,15 @@ let queue = $state({
     /** @type any[] */
     playlist : [],
     current : 0,
-    playing : false,
+
+    currentTime : 0, // to redraw elapsed time
+    progressTime : 0, // input[type=range] value
+    duration : 0,
+
+
+    scrubbing : false, // whether to update progressTime
+    playing : false, // play button state
+
     /** @type null|HTMLAudioElement */
     audio : null
 });

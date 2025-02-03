@@ -3,8 +3,7 @@
 
     let title = 'Title';
     let artist = 'Artist';
-    let cover = 'https://via.placeholder.com/150';
-    let soundcloud = 'https://soundcloud.com/kace-1';
+    let cover = 'https://picsum.photos/200';
 
     let queue = getQueue();
 
