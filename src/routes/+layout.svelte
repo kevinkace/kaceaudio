@@ -3,9 +3,6 @@
 
 	import { page } from '$app/stores';
 
-    import soundcloudIcon from '$lib/icons/soundcloud.svg';
-    import bandcampIcon   from '$lib/icons/bandcamp.svg';
-
     import Header      from "$lib/components/header.svelte";
     import MediaPlayer from "$lib/components/media-player/media-player.svelte";
 
@@ -15,15 +12,10 @@
 
     let { children } = $props();
 
-    const footerLinks = [{
-        href : links.soundcloud.href,
-        icon : soundcloudIcon,
-        alt  : links.soundcloud.label
-    }, {
-        href : links.bandcamp.href,
-        icon : bandcampIcon,
-        alt  : links.bandcamp.label
-    }];
+    const footerLinks = [
+        { ...links.soundcloud },
+        { ...links.bandcamp }
+    ];
 
     let meta = $derived(Object.assign({ title, desc, img }, $page.data.meta || {}));
 </script>
@@ -49,9 +41,9 @@
         <div>© {new Date().getFullYear()}</div>
 
         <div class="links">
-            {#each footerLinks as {href, icon, alt}}
-                <a {href} title={alt}>
-                    <img src={icon} {alt} />
+            {#each footerLinks as {href, icon, label}}
+                <a {href} title={label}>
+                    {@html icon}
                 </a>
             {/each}
         </div>
@@ -96,8 +88,8 @@
             margin-left: 1em;
 
             &:nth-child(2) {
-                & img {
-                    width: 1.6em;
+                & :global(svg) {
+                    height: 1.6em;
                 }
             }
         }

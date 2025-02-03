@@ -1,14 +1,13 @@
 <script>
-    import PrevIcon from '$lib/icons/prev.svg?raw';
-    import PlayIcon from '$lib/icons/play2.svg?raw';
-    import PauseIcon from '$lib/icons/pause.svg?raw';
-    import NextIcon from '$lib/icons/next.svg?raw';
+    import PrevIcon   from '$lib/icons/prev.svg?raw';
+    import PlayIcon   from '$lib/icons/play2.svg?raw';
+    import PauseIcon  from '$lib/icons/pause.svg?raw';
+    import NextIcon   from '$lib/icons/next.svg?raw';
     import VolumeIcon from '$lib/icons/volume-high.svg?raw';
-    import CloseIcon from '$lib/icons/close.svg?raw';
-    import SoundcloudIcon from '$lib/icons/soundcloud.svg?raw';
+    import CloseIcon  from '$lib/icons/close.svg?raw';
 
     import Progress from './components/progress.svelte';
-    import Details from './components/details.svelte';
+    import Details  from './components/details.svelte';
 
     import { links } from '$lib/data/common.js';
 
@@ -66,7 +65,7 @@
         <Details/>
 
         <div>
-            <a class="sc-link" href={current?.soundcloud || links.soundcloud.href}>{@html SoundcloudIcon}</a>
+            <a class="sc-link" href={current?.soundcloud || links.soundcloud.href}>{@html links.soundcloud.icon}</a>
         </div>
 
     </div>

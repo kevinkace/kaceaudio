@@ -1,20 +1,9 @@
 <script>
-    import soundcloudIcon from '$lib/icons/soundcloud.svg';
-    import bandcampIcon from '$lib/icons/bandcamp.svg';
-
     import { links } from '$lib/data/common.js';
 
     const infoLinks = [
-        {
-            href  : links.soundcloud.href,
-            label : links.soundcloud.label,
-            icon  : soundcloudIcon
-        },
-        {
-            href  : links.bandcamp.href,
-            label : links.bandcamp.label,
-            icon  : bandcampIcon
-        },
+        { ...links.soundcloud },
+        { ...links.bandcamp },
         {
             href  : 'https://kaceaudio.com/songs/Companion',
             label : 'song: Companion'
