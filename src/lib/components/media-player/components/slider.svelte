@@ -5,10 +5,13 @@
 </script>
 
 <input
+    type="range"
+
+    bind:value={queue.queue.progressTime}
+
     min="0"
     max={queue.queue.duration}
-    type="range"
-    bind:value={queue.queue.progressTime}
+
     onmousedown={(e) => {
         queue.queue.scrubbing = true;
     }}
