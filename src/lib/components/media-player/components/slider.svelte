@@ -11,7 +11,6 @@
         min="0"
         max={queue.queue.duration}
         type="range"
-        data-progress={queue.queue.progressTime}
         bind:value={queue.queue.progressTime}
         onmousedown={(e) => {
             queue.queue.scrubbing = true;
@@ -22,10 +21,11 @@
             if (queue.queue.audio) {
                 queue.queue.audio.currentTime = e.target?.value;
             }
-        }}
-    />
 
-    <div class="progress" style={`--progress-time: ${queue.queue.progressTime}; --duration: ${queue.queue.duration}; --ratio:${queue.queue.progressTime / queue.queue.duration}`}></div>
+            e.target?.blur();
+        }}
+        style={`--progress-time: ${queue.queue.progressTime}; --duration: ${queue.queue.duration}; --ratio:${queue.queue.progressTime / queue.queue.duration}`}
+    />
 </div>
 
 <style lang="postcss">
@@ -35,35 +35,9 @@
         --bar-height: 0.5rem;
         --thumb-height: 1rem;
         --radius: calc(var(--bar-height) / 2);
-    }
 
-    .progress {
-        position: relative;
-
-        height: var(--bar-height);
-        margin-left: calc(var(--thumb-height) / 2);
-        margin-right: calc(var(--thumb-height) / 2);
-
-        &:before {
-            width: calc(var(--thumb-height) / 2);
-            position: absolute;
-            content: "";
-            top: 0;
-            bottom: 0;
-            left: calc(var(--thumb-height) / -2);
-            border-top-left-radius: var(--radius);
-            border-bottom-left-radius: var(--radius);
-            background: red;
-        }
-        &:after {
-            position: absolute;
-            content: "";
-            top: 0;
-            bottom: 0;
-
-            width: calc(var(--ratio) * 100%);
-            background: red;
-        }
+        --color-progress-elapsed: #fff;
+        --color-progress-remaining: #fff4;
     }
 
     /* https://range-input-css.netlify.app/ */
@@ -84,7 +58,14 @@
     /******** Chrome, Safari, Opera and Edge Chromium styles ********/
     /* slider track */
     input[type="range"]::-webkit-slider-runnable-track {
-        background-color: #bababa;
+        background: linear-gradient(
+            to right,
+            var(--color-progress-elapsed) 0%,
+            var(--color-progress-elapsed) calc(var(--ratio) * 100%),
+            var(--color-progress-remaining) calc(var(--ratio) * 100%),
+            var(--color-progress-remaining) 100%
+        );
+
         border-radius: var(--radius);
         height: var(--bar-height);
     }
@@ -108,7 +89,14 @@
     /*********** Firefox styles ***********/
     /* slider track */
     input[type="range"]::-moz-range-track {
-        background-color: #bababa;
+        background: linear-gradient(
+            to right,
+            var(--color-progress-elapsed) 0%,
+            var(--color-progress-elapsed) calc(var(--ratio) * 100%),
+            var(--color-progress-remaining) calc(var(--ratio) * 100%),
+            var(--color-progress-remaining) 100%
+        );
+
         border-radius: var(--radius);
         height: var(--bar-height);
     }
