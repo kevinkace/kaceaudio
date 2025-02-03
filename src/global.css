@@ -151,3 +151,22 @@ dd {
 .chrome {
     mask-image: var(--chrome-mask-image);
 }
+
+.iconButton {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    padding: 0;
+
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+
+    & :global(svg) {
+        display: block;
+        height: 1em;
+        width: auto;
+    }
+}

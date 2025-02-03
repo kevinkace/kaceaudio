@@ -4,6 +4,7 @@
     import PauseIcon  from '$lib/icons/pause.svg?raw';
     import NextIcon   from '$lib/icons/next.svg?raw';
     import VolumeIcon from '$lib/icons/volume-high.svg?raw';
+    import MuteIcon   from '$lib/icons/volume-mute.svg?raw';
     import CloseIcon  from '$lib/icons/close.svg?raw';
 
     import Progress from './components/progress.svelte';
@@ -12,6 +13,7 @@
     import { links } from '$lib/data/common.js';
 
     import { getQueue } from './queue.svelte.js';
+    import Volume from './components/volume.svelte';
 
     const queue = getQueue();
 
@@ -58,9 +60,7 @@
 
         <Progress/>
 
-        <div>
-            <button class="volume">{@html VolumeIcon}</button>
-        </div>
+        <Volume/>
 
         <Details/>
 
@@ -88,6 +88,8 @@
 </div>
 
 <style lang="postcss">
+    @import '../../../global.css';
+
     .wrapper {
         position: fixed;
         bottom: 0;
@@ -118,25 +120,6 @@
 
         width: 100%;
         max-width: var(--site-width);
-    }
-
-    .iconButton {
-        display: flex;
-        align-items: center;
-        height: 100%;
-        width: auto;
-        padding: 0;
-
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5em;
-
-        & :global(svg) {
-            display: block;
-            height: 1em;
-            width: auto;
-        }
     }
 
     .close {
@@ -174,10 +157,6 @@
 
     .slider {
         position: relative;
-    }
-
-    .volume {
-        @extend .iconButton;
     }
 
     .sc-link {

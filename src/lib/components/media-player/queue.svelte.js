@@ -7,6 +7,7 @@ let queue = $state({
     progressTime : 0, // input[type=range] value
     duration : 0,
 
+    volume : 0.75,
 
     scrubbing : false, // whether to update progressTime
     playing : false, // play button state
@@ -82,11 +83,15 @@ export function getQueue() {
             queue.audio?.play();
         } else {
             queue.audio?.pause();
-        }
+        }  return queue.playlist[queue.current] || {};
     }
 
-    function getCurrent() {
-        return queue.playlist[queue.current] || {};
+    function toggleMute() {
+        if (queue.audio) {
+            queue.audio.muted = !queue.audio.muted;
+
+            queue.volume = queue.audio.muted ? 0 : 1;
+        }
     }
 
     return {
@@ -97,7 +102,8 @@ export function getQueue() {
         add,
         next,
         prev,
+
         togglePlay,
-        getCurrent
+        toggleMute
     };
 }
