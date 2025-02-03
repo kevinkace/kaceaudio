@@ -11,19 +11,21 @@
 
     import { pageTitle } from "$lib/helpers/pageTitle";
 
-    import { title, desc, img, links as _links } from "$lib/data/common";
+    import { title, desc, img, links } from "$lib/data/common";
 
-    const links = [{
-        href : _links.soundcloud.href,
+    let { children } = $props();
+
+    const footerLinks = [{
+        href : links.soundcloud.href,
         icon : soundcloudIcon,
-        alt  : _links.soundcloud.label
+        alt  : links.soundcloud.label
     }, {
-        href : _links.bandcamp.href,
+        href : links.bandcamp.href,
         icon : bandcampIcon,
-        alt  : _links.bandcamp.label
+        alt  : links.bandcamp.label
     }];
 
-    $:meta = Object.assign({ title, desc, img }, $page.data.meta || {});
+    let meta = $derived(Object.assign({ title, desc, img }, $page.data.meta || {}));
 </script>
 
 
@@ -39,7 +41,7 @@
     <div>
         <Header/>
         <main>
-            <slot />
+            {@render children?.()}
         </main>
     </div>
     <footer class="footer">
@@ -47,7 +49,7 @@
         <div>© {new Date().getFullYear()}</div>
 
         <div class="links">
-            {#each links as {href, icon, alt}}
+            {#each footerLinks as {href, icon, alt}}
                 <a {href} title={alt}>
                     <img src={icon} {alt} />
                 </a>
