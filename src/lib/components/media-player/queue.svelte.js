@@ -3,13 +3,13 @@ let queue = $state({
     playlist : [],
     current : 0,
 
-    currentTime : 0, // to redraw elapsed time
+    currentTime : 0, // synced with <audio>.currentTime, to redraw elapsed time
     progressTime : 0, // input[type=range] value
     duration : 0,
-
-    volume : 0.75,
-
     scrubbing : false, // whether to update progressTime
+
+    muted : false, //
+
     playing : false, // play button state
 
     /** @type null|HTMLAudioElement */
@@ -89,9 +89,9 @@ export function getQueue() {
     function toggleMute() {
         if (queue.audio) {
             queue.audio.muted = !queue.audio.muted;
-
-            queue.volume = queue.audio.muted ? 0 : 1;
         }
+
+        queue.muted = !queue.muted;
     }
 
     return {
