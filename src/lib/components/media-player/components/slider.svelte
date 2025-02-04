@@ -30,6 +30,5 @@
 />
 
 <style lang="postcss">
-    /* https://range-input-css.netlify.app/ */
     @import './range.css';
 </style>
