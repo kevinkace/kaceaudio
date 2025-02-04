@@ -77,7 +77,7 @@
 </div>
 
 <style lang="postcss">
-    @import '../../../../global.css';
+    @import './iconButton.css';
 
     @import './range.css';
 

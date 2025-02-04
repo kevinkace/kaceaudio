@@ -86,7 +86,7 @@
 </div>
 
 <style lang="postcss">
-    @import '../../../global.css';
+    @import './components/iconButton.css';
 
     .wrapper {
         position: fixed;
