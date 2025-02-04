@@ -1,12 +1,7 @@
 <script>
+    import { onMount } from 'svelte';
     import { fly } from 'svelte/transition';
 
-    import PrevIcon   from '$lib/icons/prev.svg?raw';
-    import PlayIcon   from '$lib/icons/play2.svg?raw';
-    import PauseIcon  from '$lib/icons/pause.svg?raw';
-    import NextIcon   from '$lib/icons/next.svg?raw';
-    import VolumeIcon from '$lib/icons/volume-high.svg?raw';
-    import MuteIcon   from '$lib/icons/volume-mute.svg?raw';
     import CloseIcon  from '$lib/icons/close.svg?raw';
 
     import Progress from './components/progress.svelte';
@@ -16,6 +11,7 @@
 
     import { getQueue } from './queue.svelte.js';
     import Volume from './components/volume.svelte';
+    import Controls from './components/controls.svelte';
 
     const queue = getQueue();
 
@@ -26,9 +22,9 @@
     /** @type {HTMLAudioElement} */
     let audio;
 
-    setTimeout(() => {
+    onMount(() => {
         queue.setAudioElement(audio);
-    }, 100);
+    });
 
     function close() {
         console.log('close');
@@ -55,11 +51,7 @@
                 {@html CloseIcon}
             </button>
 
-            <div class="controls">
-                <button class="prev" onclick={() => queue.prev()}>{@html PrevIcon}</button>
-                <button class="play" onclick={() => queue.togglePlay()}>{@html queue.queue.playing ? PauseIcon : PlayIcon}</button>
-                <button class="next" onclick={() => queue.next()}>{@html NextIcon}</button>
-            </div>
+            <Controls/>
 
             <Progress/>
 
@@ -135,32 +127,10 @@
         font-size: 0.8em;
     }
 
-    .controls {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        gap: 0.2em;
-    }
-
-    .prev,
-    .play,
-    .next {
-        @extend .iconButton;
-    }
-
-    .progress {
-        flex-basis: 100%;
-        display: flex;
-    }
-
-    .slider {
-        position: relative;
-    }
-
     .sc-link {
         @extend .iconButton;
     }
+
     .debug {
         position: fixed;
         top: 10px;
