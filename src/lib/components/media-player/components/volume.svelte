@@ -1,11 +1,12 @@
 <script>
+    import { fly } from 'svelte/transition';
+
     import MuteIcon         from '$lib/icons/volume-mute.svg?raw';
     import VolumeLowIcon    from '$lib/icons/volume-low.svg?raw';
     import VolumeMediumIcon from '$lib/icons/volume-medium.svg?raw';
     import VolumeHighIcon   from '$lib/icons/volume-high.svg?raw';
 
     import { getQueue } from "../queue.svelte";
-    import { fly } from 'svelte/transition';
 
     let queue = getQueue();
 

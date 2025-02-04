@@ -1,4 +1,6 @@
 <script>
+    import { fly } from 'svelte/transition';
+
     import PrevIcon   from '$lib/icons/prev.svg?raw';
     import PlayIcon   from '$lib/icons/play2.svg?raw';
     import PauseIcon  from '$lib/icons/pause.svg?raw';
@@ -46,30 +48,32 @@
     }
 </script>
 
-<div class="wrapper" class:wrapperShow={queue.queue.playlist.length}>
-    <div class="content">
-        <button class="close" onclick={close}>
-            {@html CloseIcon}
-        </button>
+{#if queue.queue.playlist.length}
+    <div class="wrapper" transition:fly={{ y : 30, duration : 250}}>
+        <div class="content">
+            <button class="close" onclick={close}>
+                {@html CloseIcon}
+            </button>
 
-        <div class="controls">
-            <button class="prev" onclick={() => queue.prev()}>{@html PrevIcon}</button>
-            <button class="play" onclick={() => queue.togglePlay()}>{@html queue.queue.playing ? PauseIcon : PlayIcon}</button>
-            <button class="next" onclick={() => queue.next()}>{@html NextIcon}</button>
+            <div class="controls">
+                <button class="prev" onclick={() => queue.prev()}>{@html PrevIcon}</button>
+                <button class="play" onclick={() => queue.togglePlay()}>{@html queue.queue.playing ? PauseIcon : PlayIcon}</button>
+                <button class="next" onclick={() => queue.next()}>{@html NextIcon}</button>
+            </div>
+
+            <Progress/>
+
+            <Volume/>
+
+            <Details/>
+
+            <div>
+                <a class="sc-link" href={current?.soundcloud || links.soundcloud.href}>{@html links.soundcloud.icon}</a>
+            </div>
+
         </div>
-
-        <Progress/>
-
-        <Volume/>
-
-        <Details/>
-
-        <div>
-            <a class="sc-link" href={current?.soundcloud || links.soundcloud.href}>{@html links.soundcloud.icon}</a>
-        </div>
-
     </div>
-</div>
+{/if}
 
 <div class:debug={debug}>
     <audio
@@ -103,13 +107,6 @@
 
         background: black;
         border-top: solid 1px #999;
-
-        transform: translateY(100%);
-        transition: transform 200ms;
-
-        &.wrapperShow {
-            transform: translateY(0);
-        }
     }
 
     .content {
