@@ -7,12 +7,35 @@
     import NextIcon   from '$lib/icons/next.svg?raw';
 
     let queue = getQueue();
+
+    const buttons = $derived([
+        {
+            name : 'prev',
+            icon : PrevIcon,
+            onclick : () => queue.prev()
+        },
+        {
+            name : 'togglePlay',
+            icon : queue.queue.playing ? PauseIcon : PlayIcon,
+            onclick : () => queue.togglePlay()
+        },
+        {
+            name : 'next',
+            icon : NextIcon,
+            onclick : () => queue.next()
+        }
+    ]);
 </script>
 
 <div class="controls">
-    <button class="prev" onclick={() => queue.prev()}>{@html PrevIcon}</button>
-    <button class="play" onclick={() => queue.togglePlay()}>{@html queue.queue.playing ? PauseIcon : PlayIcon}</button>
-    <button class="next" onclick={() => queue.next()}>{@html NextIcon}</button>
+    {#each buttons as { name, icon, onclick }}
+        <button
+            class={name}
+            onclick={onclick}
+        >
+            {@html icon}
+        </button>
+    {/each}
 </div>
 
 <style lang="postcss">
@@ -27,7 +50,7 @@
     }
 
     .prev,
-    .play,
+    .togglePlay,
     .next {
         @extend .iconButton;
     }
