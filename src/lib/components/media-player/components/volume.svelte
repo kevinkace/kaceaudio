@@ -11,7 +11,23 @@
     let queue = getQueue();
 
     let showVolume = $state(false);
-    let timeoutId = $state();
+    let timeoutId  = $state();
+
+    let icon = $derived.by(() => {
+        if (queue.queue.muted) {
+            return MuteIcon;
+        }
+
+        if (queue.queue.volume < 0.33) {
+            return VolumeLowIcon;
+        }
+
+        if (queue.queue.volume < 0.66) {
+            return VolumeMediumIcon;
+        }
+
+        return VolumeHighIcon;
+    });
 </script>
 
 <div
@@ -36,7 +52,7 @@
             queue.toggleMute();
         }}
     >
-        {@html queue.queue.muted ? MuteIcon : VolumeMediumIcon}
+        {@html icon}
     </button>
 
     {#if showVolume}
@@ -67,6 +83,9 @@
 
     .wrapper {
         position: relative;
+
+        --color-bg: #222;
+        --color-border: #fff9;
     }
 
     .slider-wrapper {
@@ -75,20 +94,44 @@
         left: 50%;
         width: 10em;
         height: 3em;
+        padding: 0 1em;
+
         display: flex;
         align-items: center;
         justify-content: center;
 
-        padding: 0 1em;
-
-        border: solid 1px #fff9;
-        background: #222b;
+        border: solid 1px var(--color-border);
+        background: var(--color-bg);
 
         transform: rotate(-90deg);
         transform-origin: 0 50%;
+
+        /*  left triangle */
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -0.46em;
+            width: 0;
+            height: 0;
+            border-top: 0.5em solid transparent;
+            border-bottom: 0.5em solid transparent;
+            border-right: 0.5em solid var(--color-bg);
+
+            transform: translateY(-50%);
+        }
+
+        &:before {
+            left: -0.56em;
+
+            border-right-color: var(--color-border);
+        }
     }
 
     .volume {
         @extend .iconButton;
+
+        width: 1.1em;
     }
 </style>
