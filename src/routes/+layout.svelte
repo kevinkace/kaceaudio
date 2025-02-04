@@ -54,21 +54,18 @@
 <MediaPlayer/>
 
 <style lang="postcss">
-    @custom-media --mq-fixed screen and (min-width: 1000px);
-    @custom-media --mq-split screen and (min-width: 600px);
+    @import '../global.css';
 
     .layout {
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
         justify-content: space-between;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 4%;
 
-        @media (--mq-fixed) {
-            padding: 0;
-        }
+        min-height: 100vh;
+        max-width: var(--layout-width);
+
+        margin: 0 auto;
+        padding: 0 var(--layout-padding);
     }
 
     .footer {

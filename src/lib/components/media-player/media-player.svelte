@@ -88,15 +88,13 @@
 <style lang="postcss">
     @import './components/iconButton.css';
 
+    @custom-media --mq-fixed screen and (min-width: var(--layout-width));
+
     .wrapper {
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         background: black;
         border-top: solid 1px #999;
@@ -109,8 +107,10 @@
         justify-content: space-between;
         gap: 1.6em;
 
-        width: 100%;
-        max-width: var(--site-width);
+        max-width: var(--layout-width);
+
+        margin: 0 auto;
+        padding: 0 var(--layout-padding);
     }
 
     .close {

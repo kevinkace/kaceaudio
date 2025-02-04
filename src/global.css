@@ -5,14 +5,15 @@
 @custom-media --mq-mid   screen and (min-width: 800px);
 
 :root {
-
-    --site-width: 1000px;
     --color-link: #aaa;
     --color-text: #eee;
     --color-bg: #000;
 
     --font-display: Orbitron;
     --font-body: "Cairo";
+
+    --layout-width: 1000px;
+    --layout-padding: 4%;
 
     --chrome-mask-image: linear-gradient(
         rgba(0, 0, 0, 0.4) 0%,
@@ -27,6 +28,10 @@
         transparent 70%,
         black 100%
     );
+
+    @media (--mq-fixed) {
+        --layout-padding: 40px;
+    }
 }
 
 html {
