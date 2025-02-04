@@ -5,6 +5,7 @@
     import VolumeHighIcon   from '$lib/icons/volume-high.svg?raw';
 
     import { getQueue } from "../queue.svelte";
+    import { fly } from 'svelte/transition';
 
     let queue = getQueue();
 
@@ -25,7 +26,7 @@
     onmouseleave={() => {
         timeoutId = setTimeout(() => {
             showVolume = false;
-        }, 500);
+        }, 300);
     }}
 >
     <button
@@ -38,7 +39,7 @@
     </button>
 
     {#if showVolume}
-        <div class="slider-wrapper">
+        <div class="slider-wrapper" transition:fly={{ x: -30, duration: 150 }}>
             <input
                 type="range"
 
