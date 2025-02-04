@@ -77,7 +77,6 @@
         {ontimeupdate}
         {onloadedmetadata}
         controls={debug}
-        volume={0.75}
         bind:muted={queue.queue.muted}
         src={current?.href}
     ></audio>

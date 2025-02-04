@@ -7,30 +7,55 @@
     import { getQueue } from "../queue.svelte";
 
     let queue = getQueue();
+
+    let showVolume = $state(false);
+    let timeoutId = $state();
 </script>
 
-<div class="wrapper">
-    <button class="volume" onclick={() => queue.toggleMute()}>{@html queue.queue.muted ? MuteIcon : VolumeMediumIcon}</button>
+<div
+    class="wrapper"
 
-    <div class="slider-wrapper">
-        <input
-            type="range"
+    aria-hidden={true}
 
-            min="0"
-            max="1"
-            step="0.01"
-            bind:value={
-                () => queue.queue?.muted ? 0 : queue.queue.audio?.volume,
-                (v) => {
-                    if (queue.queue.audio) {
+    onmouseenter={() => {
+        showVolume = true;
+        clearTimeout(timeoutId);
+    }}
+
+    onmouseleave={() => {
+        timeoutId = setTimeout(() => {
+            showVolume = false;
+        }, 500);
+    }}
+>
+    <button
+        class="volume"
+        onclick={() => {
+            queue.toggleMute();
+        }}
+    >
+        {@html queue.queue.muted ? MuteIcon : VolumeMediumIcon}
+    </button>
+
+    {#if showVolume}
+        <div class="slider-wrapper">
+            <input
+                type="range"
+
+                min="0"
+                max="1"
+                step="0.01"
+                bind:value={
+                    () => queue.queue.muted ? 0 : queue.queue.volume,
+                    (v) => {
                         queue.queue.muted = v === 0;
-                        queue.queue.audio.volume = v || 0;
-                    }
-                }}
+                        queue.queue.volume = v || 0;
+                    }}
 
-            style={`--ratio:${queue.queue?.muted ? 0 : queue.queue.audio?.volume}`}
-        />
-    </div>
+                style={`--ratio:${queue.queue.muted ? 0 : queue.queue.volume}`}
+            />
+        </div>
+    {/if}
 </div>
 
 <style lang="postcss">

@@ -8,6 +8,7 @@ let queue = $state({
     duration : 0,
     scrubbing : false, // whether to update progressTime
 
+    volume : 75,
     muted : false, //
 
     playing : false, // play button state
@@ -98,6 +99,7 @@ export function getQueue() {
         get queue() {
             return queue;
         },
+
         setAudioElement,
         add,
         next,
