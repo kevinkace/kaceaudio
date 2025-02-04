@@ -8,7 +8,7 @@ let queue = $state({
     duration : 0,
     scrubbing : false, // whether to update progressTime
 
-    volume : 75,
+    volume : 0.75,
     muted : false, //
 
     playing : false, // play button state
