@@ -7,7 +7,7 @@
 </script>
 
 <div class="currently-playing">
-    <img src={current?.cover || 'https://picsum.photos/200'} alt="cover" class="cover"/>
+    <img src={current?.cover || '/images/kace-headshot-thumb.jpg'} alt="cover" class="cover"/>
 
     <div class="content">
         <div class="artist">{current?.artist || 'Artist'}</div>
