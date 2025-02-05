@@ -1,5 +1,6 @@
 <script>
     import { getQueue } from "../queue.svelte";
+
     import Slider from "./slider.svelte";
 
     let queue = getQueue();
@@ -30,18 +31,30 @@
 </div>
 
 <style lang="postcss">
+    @custom-media --mq-fixed screen and (min-width: 1000px);
+    @custom-media --mq-mid   screen and (min-width: 800px);
+    @custom-media --mq-split screen and (min-width: 600px);
+
     .container {
         --handle-width: 0.8em;
 
-        flex-basis: 100%;
-        display: flex;
-        align-items: center;
-        gap: 1em;
+        display: none;
+
+        @media (--mq-split) {
+            flex-basis: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
     }
 
     .elapsed,
     .duration {
+        display: none;
 
+        @media (--mq-split) {
+            display: unset;
+        }
     }
 
     .slider {
@@ -81,5 +94,4 @@
 
         background: #666;
     }
-
 </style>

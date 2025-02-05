@@ -78,14 +78,22 @@
 
 <style lang="postcss">
     @import './iconButton.css';
-
     @import './range.css';
 
+    @custom-media --mq-fixed screen and (min-width: 1000px);
+    @custom-media --mq-split screen and (min-width: 600px);
+    @custom-media --mq-mid   screen and (min-width: 800px);
+
     .wrapper {
+        display: none;
         position: relative;
 
         --color-bg: #222;
         --color-border: #fff9;
+
+        @media (--mq-fixed) {
+            display: unset;
+        }
     }
 
     .slider-wrapper {

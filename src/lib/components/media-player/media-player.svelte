@@ -45,7 +45,11 @@
 </script>
 
 {#if queue.queue.playlist.length}
-    <div class="wrapper" transition:fly={{ y : 30, duration : 250}}>
+    <div
+        class="media-player"
+        transition:fly={{ y : 30, duration : 250}}
+        style={`--ratio:${queue.queue.progressTime / queue.queue.duration}`}
+    >
         <div class="content">
             <button class="close" onclick={close}>
                 {@html CloseIcon}
@@ -59,7 +63,7 @@
 
             <Details/>
 
-            <div>
+            <div class="links">
                 <a class="sc-link" href={current?.soundcloud || links.soundcloud.href}>{@html links.soundcloud.icon}</a>
             </div>
 
@@ -88,16 +92,38 @@
 <style lang="postcss">
     @import './components/iconButton.css';
 
-    @custom-media --mq-fixed screen and (min-width: var(--layout-width));
+    @custom-media --mq-split screen and (min-width: 600px);
+    @custom-media --mq-mid   screen and (min-width: 800px);
 
-    .wrapper {
+    .media-player {
+        --bar-height: 0.3rem;
+        --thumb-height: 1rem;
+        --radius: calc(var(--bar-height) / 2);
+        --thumb-ring: 0.125rem;
+        --thumb-offset: 0.2rem;
+
+        --color-progress-elapsed: #fff;
+        --color-progress-remaining: #fff4;
+        --color-thumb: #fff;
+
+        --progress-bg: linear-gradient(
+                to right,
+                var(--color-progress-elapsed) 0%,
+                var(--color-progress-elapsed) calc(var(--ratio) * 100%),
+                var(--color-progress-remaining) calc(var(--ratio) * 100%),
+                var(--color-progress-remaining) 100%
+            );
+
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
 
         background: black;
-        border-top: solid 1px #999;
+
+        @media (--mq-split) {
+            border-top: solid 1px #999;
+        }
     }
 
     .content {
@@ -111,6 +137,22 @@
 
         margin: 0 auto;
         padding: 0 var(--layout-padding);
+
+        &:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 100%;
+            left: 0;
+            height: var(--bar-height);
+
+            background: var(--progress-bg);
+
+
+            @media (--mq-split) {
+                content: none;
+            }
+        }
     }
 
     .close {
@@ -125,6 +167,14 @@
 
         opacity: 0.4;
         font-size: 0.8em;
+    }
+
+    .links {
+        display: none;
+
+        @media (--mq-mid) {
+            display: unset;
+        }
     }
 
     .sc-link {

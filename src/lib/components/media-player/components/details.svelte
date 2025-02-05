@@ -17,7 +17,11 @@
 </div>
 
 <style type="postcss">
+    @custom-media --mq-split screen and (min-width: 600px);
+    @custom-media --mq-mid   screen and (min-width: 800px);
+
     .currently-playing {
+        flex: 1;
         display: flex;
         gap: 1em;
         align-items: center;
@@ -27,7 +31,6 @@
     }
 
     .cover {
-        display: block;
         grid-area: image;
 
         height: 3em;
@@ -36,9 +39,12 @@
 
     .content {
         flex: 1;
-        width: 16em;
 
         line-height: 1.2;
+
+        @media (--mq-split) {
+            width: 16em;
+        }
     }
 
     .title {

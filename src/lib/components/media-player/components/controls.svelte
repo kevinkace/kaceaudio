@@ -41,6 +41,9 @@
 <style lang="postcss">
     @import './iconButton.css';
 
+    @custom-media --mq-split screen and (min-width: 600px);
+    @custom-media --mq-mid   screen and (min-width: 800px);
+
     .controls {
         display: flex;
         justify-content: space-between;
@@ -53,5 +56,14 @@
     .togglePlay,
     .next {
         @extend .iconButton;
+    }
+
+    .prev,
+    .next {
+        display: none;
+
+        @media (--mq-mid) {
+            display: unset;
+        }
     }
 </style>

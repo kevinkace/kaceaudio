@@ -26,7 +26,6 @@
             queue.queue.audio.currentTime = e.target?.value;
         }
     }}
-    style={`--ratio:${queue.queue.progressTime / queue.queue.duration}`}
 />
 
 <style lang="postcss">

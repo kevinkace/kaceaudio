@@ -1,22 +1,5 @@
 /* https://range-input-css.netlify.app/ */
 input[type="range"] {
-    --bar-height: 0.3rem;
-    --thumb-height: 1rem;
-    --radius: calc(var(--bar-height) / 2);
-    --thumb-ring: 0.125rem;
-    --thumb-offset: 0.2rem;
-
-    --color-progress-elapsed: #fff;
-    --color-progress-remaining: #fff4;
-    --color-thumb: #fff;
-
-    --progress-bg: linear-gradient(
-            to right,
-            var(--color-progress-elapsed) 0%,
-            var(--color-progress-elapsed) calc(var(--ratio) * 100%),
-            var(--color-progress-remaining) calc(var(--ratio) * 100%),
-            var(--color-progress-remaining) 100%
-        );
 
     -webkit-appearance: none;
     appearance: none;
