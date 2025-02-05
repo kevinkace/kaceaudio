@@ -74,7 +74,7 @@
 
     @media (--mq-fixed) {
         .header {
-            background: #000;
+            background: unset;
         }
     }
 
@@ -160,6 +160,10 @@
             content: "|";
             position: absolute;
             right: -0.1em;
+        }
+
+        &:last-child {
+            padding-right: 0;
         }
     }
 

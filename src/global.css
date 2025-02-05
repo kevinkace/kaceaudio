@@ -12,6 +12,9 @@
     --font-display: Orbitron;
     --font-body: "Cairo";
 
+    --layout-width: 1000px;
+    --layout-padding: 4%;
+
     --chrome-mask-image: linear-gradient(
         rgba(0, 0, 0, 0.4) 0%,
         black 30%,
@@ -25,6 +28,10 @@
         transparent 70%,
         black 100%
     );
+
+    @media (--mq-fixed) {
+        --layout-padding: 40px;
+    }
 }
 
 html {
@@ -73,7 +80,7 @@ h1 {
 }
 
 h2 {
-    margin-bottom: 0.8em;
+    margin-bottom: 1em;
 
     font-family: var(--font-display);
     font-size: 1.4em;
@@ -114,8 +121,6 @@ dd {
         color: var(--color-text);
     }
 }
-
-
 
 .split {
     @media (--mq-split) {

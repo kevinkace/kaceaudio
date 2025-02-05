@@ -19,11 +19,11 @@
         <ul>
             <li><a href={song.soundcloud} class="soundcloud button icon"><span>Soundcloud</span></a></li>
             <li><a href={song.wav.dropbox} class="dropbox button icon"><span>Dropbox</span></a></li>
-            <li><a href={song.wav.drive} class="drive button icon"><span>Drive</span></a></li>
+            <li><a href={song.wav.drive} class="drive button icon"><span>Google Drive</span></a></li>
             <li class="mp3s">
                 mp3:
                 <a href={song.mp3.dropbox} class="dropboxIcon icon"><span>Dropbox</span></a>
-                <a href={song.mp3.drive} class="driveIcon icon"><span>Drive</span></a>
+                <a href={song.mp3.drive} class="driveIcon icon"><span>Google Drive</span></a>
             </li>
         </ul>
     </div>

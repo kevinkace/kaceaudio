@@ -1,0 +1,63 @@
+/* https://range-input-css.netlify.app/ */
+input[type="range"] {
+
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+
+    background: transparent;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    /******** Chrome, Safari, Opera and Edge Chromium styles ********/
+    &::-webkit-slider-runnable-track {
+        background: var(--progress-bg);
+
+        border-radius: var(--radius);
+        height: var(--bar-height);
+    }
+
+    /* slider thumb */
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        margin-top: calc(
+            (var(--thumb-height) / -2) + var(--bar-height) / 2
+        ); /* Centers thumb on the track */
+        background-color: var(--color-thumb);
+        border-radius: 50%;
+        height: var(--thumb-height);
+        width: var(--thumb-height);
+    }
+
+    &:focus::-webkit-slider-thumb {
+        outline: var(--thumb-ring) solid var(--color-thumb);
+        outline-offset: var(--thumb-offset);
+    }
+
+    /*********** Firefox styles ***********/
+    &::-moz-range-track {
+        background: var(--progress-bg);
+
+        border-radius: var(--radius);
+        height: var(--bar-height);
+    }
+
+    /* slider thumb */
+    &::-moz-range-thumb {
+        background-color: var(--color-thumb);
+        border: none; /*Removes extra border that FF applies*/
+        border-radius: 50%;
+        height: var(--thumb-height);
+        width: var(--thumb-height);
+    }
+
+    &:focus::-moz-range-thumb {
+        outline: var(--thumb-ring) solid var(--color-thumb);
+        outline-offset: var(--thumb-offset);
+    }
+}

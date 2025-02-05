@@ -28,6 +28,7 @@
 		"minireset.css": "^0.0.7",
 		"postcss": "^8.4.31",
 		"postcss-custom-media": "^10.0.2",
+		"postcss-extend": "^1.0.5",
 		"postcss-import": "^15.1.0",
 		"postcss-nested": "^6.0.1",
 		"svelte": "^5.0.0",
