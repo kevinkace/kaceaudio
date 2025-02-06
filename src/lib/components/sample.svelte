@@ -1,5 +1,6 @@
 <script>
     import Audio from "./audio.svelte";
+    import { getQueue } from "./media-player/queue.svelte";
 
     export let title = "";
     export let preview = "";
@@ -7,7 +8,7 @@
     export let desc = "";
     export let showDesc = false;
 
-    let player = false;
+    let queue = getQueue();
 </script>
 
 <h3>{title}</h3>
@@ -18,7 +19,11 @@
     <button
         class="action play"
         on:click={() => {
-            player = !player;
+            queue.add({
+                title,
+                artist : "Kace",
+                href   : preview
+            });
         }}
     >
         listen
@@ -27,10 +32,6 @@
 
 {#if showDesc !== false}
     <p class="desc">{desc}</p>
-{/if}
-
-{#if player}
-    <Audio src={preview} />
 {/if}
 
 <style lang="postcss">
@@ -54,7 +55,7 @@
             position: absolute;
             height: 0.7em;
             width: 0.7em;
-            top: 0.1em;
+            top: 0.6em;
             right: 0;
 
             background-size: 100% 100%;
@@ -75,7 +76,6 @@
         &:before {
             width: 0.8em;
             height: 0.8em;
-            top: 0.2em;
             background-image: url($lib/icons/play.svg);
         }
     }
