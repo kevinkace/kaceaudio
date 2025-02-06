@@ -6,13 +6,15 @@ export const songArchive = [
                 title   : 'Dust Puddle - 2025 remaster',
                 artist  : 'Kace',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+remaster.mp3'
+                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+remaster.mp3',
+                cover : "dust-puddle"
             },
             {
                 title   : 'Dust Puddle - 2025 edit',
                 artist  : 'Kace',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+edit.mp3'
+                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+edit.mp3',
+                cover : "dust-puddle"
             }
         ]
     },
@@ -23,7 +25,8 @@ export const songArchive = [
                 title   : 'Cell Block',
                 artist  : 'Kace',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Cell+Block+-+Kace.mp3'
+                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Cell+Block+-+Kace.mp3',
+                cover : "cell-block"
             },
             {
                 title   : "Breakin'Borders Dub",
