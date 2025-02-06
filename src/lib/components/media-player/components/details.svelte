@@ -1,13 +1,15 @@
 <script>
     import { getQueue } from "../queue.svelte.js";
 
+    import { find } from '$lib/helpers/images.js';
+
     let queue = getQueue();
 
     let current = $derived(queue.queue.playlist[queue.queue.current]);
 </script>
 
 <div class="currently-playing">
-    <img src={current?.cover || '/images/kace-headshot-thumb.jpg'} alt="cover" class="cover"/>
+    <enhanced:img src={find(current.cover)} alt="cover" class="cover"/>
 
     <div class="content">
         <div class="artist">{current?.artist || 'Artist'}</div>
@@ -34,7 +36,9 @@
         grid-area: image;
 
         height: 3em;
-        aspect-ratio: 1;
+        width: 3em;
+
+        border: solid 1px #fff4;
     }
 
     .content {

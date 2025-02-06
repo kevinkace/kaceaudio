@@ -52,7 +52,8 @@ export const songArchive = [
                 title   : 'Sub Scrypt',
                 artist  : 'Kace & Andyslim',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Sub+Scrypt+-+Kace+%26+Andyslim.mp3'
+                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Sub+Scrypt+-+Kace+%26+Andyslim.mp3',
+                cover   : 'sub-scrypt'
             },
             {
                 title   : 'Booking - 2025 remaster',
@@ -75,7 +76,20 @@ export const songArchive = [
                 title   : 'Dust Bowl',
                 artist  : 'Kace',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Dustbowl+-+Kace.mp3'
+                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Dustbowl+-+Kace.mp3',
+                cover   : 'dust-bowl'
+            }
+        ]
+    },
+    {
+        year  : 2021,
+        songs : [
+            {
+                title   : 'Companion',
+                artist  : 'Kace',
+                bitrate : 320,
+                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Companion+-+Kace.mp3',
+                cover   : 'companion'
             }
         ]
     }
