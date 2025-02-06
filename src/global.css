@@ -122,6 +122,11 @@ dd {
     }
 }
 
+img,
+picture {
+    display: block;
+}
+
 .split {
     @media (--mq-split) {
         display: grid;
