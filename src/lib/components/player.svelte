@@ -1,4 +1,6 @@
 <script>
+    import { find } from "$lib/helpers/images";
+
     /** @type Song */
     export let song;
 
@@ -14,7 +16,7 @@
         <iframe width='100%' height='300' scrolling='no' frameBorder='no' allow='autoplay' src={ embed } title={ title }></iframe>
     {:else}
         <span class="play">
-            <img src={ `/images/songs/${img}` } alt={ title } />
+            <enhanced:img src={find(img)} alt={ title } />
         </span>
     {/if}
 </a>

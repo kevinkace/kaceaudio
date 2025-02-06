@@ -14,7 +14,12 @@
 <ul class="links">
     {#each infoLinks as { href, label, icon }}
         <li>
-            <a href={href}>{label} <img src={icon} alt='' /></a>
+            <a href={href}>
+                {label}
+                {#if icon}
+                    {@html icon}
+                {/if}
+            </a>
         </li>
     {/each}
 </ul>
@@ -38,7 +43,7 @@
 
             transition: background 0.15s, color 0.15s;
 
-            img {
+            & :global(svg) {
                 margin-left: 0.6em;
                 height: 1.4em;
 
@@ -49,7 +54,7 @@
                 background: #eee;
                 color: #000;
 
-                img {
+                & :global(svg) {
                     filter: invert(1);
                 }
             }
