@@ -1,5 +1,5 @@
 let queue = $state({
-    /** @type any[] */
+    /** @type {import('../../../../types').Song[]} */
     playlist : [],
     current : 0,
 
@@ -9,7 +9,7 @@ let queue = $state({
     scrubbing : false, // whether to update progressTime
 
     volume : 0.75,
-    muted : false, //
+    muted : false,
 
     playing : false, // play button state
 
@@ -35,14 +35,14 @@ export function getQueue() {
 
     /**
      * add song to playlist
-     * @param {object} song
+     * @param {import('../../../../types').Song} song
      */
     function add(song) {
         let playlist = [ ...queue.playlist, song ];
 
         queue = {
             ...queue,
-            playlist : playlist,
+            playlist,
             current  : playlist.length - 1,
             playing  : true
         };
