@@ -9,14 +9,11 @@
     import { title } from "$lib/data/common";
 
     const links = [{
-    //     href  : '/',
-    //     label : 'music'
-    // }, {
-        href  : '/samples',
-        label : 'samples'
-    }, {
         href  : '/songs/Companion',
         label : 'songs'
+    }, {
+        href  : '/samples',
+        label : 'samples'
     }, {
         href  : '/info',
         label : 'info'
