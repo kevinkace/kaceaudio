@@ -131,6 +131,10 @@ picture {
     display: block;
 }
 
+svg {
+    fill: currentColor;
+}
+
 .split {
     @media (--mq-split) {
         display: grid;

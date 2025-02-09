@@ -39,8 +39,11 @@
             height: 1.4em;
             width: 1.4em;
             padding: 0.1em 0.1em 0.1em 0.3em;
+
             border-radius: 50%;
+
             background: white;
+            fill: #000;
         }
 
         &.playing > :global(svg) {
