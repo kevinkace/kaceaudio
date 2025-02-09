@@ -2,14 +2,24 @@
     import { getQueue } from './media-player/queue.svelte';
 
     import PlayIcon from '$lib/icons/play2.svg?raw';
+    import PauseIcon from '$lib/icons/pause.svg?raw';
 
     let queue = getQueue();
 
     let { children, song } = $props();
+
+    let current = $derived(queue.queue.playlist[queue.queue.current] || {});
+    let playing = $derived(current.href === song.href && queue.queue.playing);
 </script>
 
-<button onclick={() => queue.add(song)}>
-    {@html PlayIcon}
+<button onclick={() => {
+    if (current.href === song.href) {
+        queue.togglePlay();
+    } else {
+        queue.add(song);
+    }
+}} class:playing={playing}>
+    {@html playing ? PauseIcon : PlayIcon}
     <div>
         {@render children?.()}
     </div>
@@ -30,9 +40,13 @@
             width: 1.4em;
             padding: 0.1em 0.1em 0.1em 0.3em;
             border-radius: 50%;
-            /* border: solid 1px white; */
-            background: black;
+            background: white;
+        }
+
+        &.playing > :global(svg) {
             filter: invert(1);
+            outline: solid 2px #333;
+            padding: 0.3em;
         }
     }
 </style>
