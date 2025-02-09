@@ -1,4 +1,5 @@
 <script>
+    import PlayIcon from "$lib/icons/play2.svg?raw";
     import { find } from "$lib/helpers/images";
 
     /** @type Song */
@@ -17,6 +18,8 @@
     {:else}
         <span class="play">
             <enhanced:img src={find(img)} alt={ title } />
+            {@html PlayIcon}
+            {@html PlayIcon}
         </span>
     {/if}
 </a>
@@ -28,40 +31,35 @@
 
         border: solid 1px transparent;
 
-        &:before,
-        &:after {
-            content: '';
+        & :global(svg) {
             position: absolute;
             z-index: 1;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            transform-origin: 50% 50%;
+            padding-left: 0.3em;
 
             height: 30%;
             width: 30%;
 
-            background:  url($lib/icons/play.svg) no-repeat 80% 50%;
-            background-size: 80%;
             border-radius: 50%;
             border: solid 2px white;
+            opacity: 0.8;
 
-            transition: opacity 0.3s;
-        }
+            transition: opacity 200ms, transform 200ms, filter 200ms;
 
-        &:before {
             mix-blend-mode: soft-light;
-        }
 
-        &:after {
-            opacity: 0.2;
-        }
-
-        &:hover {
-            border-color: rgba(255, 255, 255, 0.3);
-
-            &:after {
-                opacity: 0.5;
+            &:last-child {
+                mix-blend-mode: unset;
+                opacity: 0.2 !important;
             }
+        }
+
+        &:hover :global(svg) {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.2);
         }
     }
 
