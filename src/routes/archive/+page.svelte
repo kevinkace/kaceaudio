@@ -1,11 +1,8 @@
 <script>
     import Sep from '$lib/components/Sep.svelte';
 
-    import DownloadIcon from '$lib/icons/download.svg?raw'
-
     import { getQueue } from '$lib/components/media-player/queue.svelte.js';
     import DownloadLink from '$lib/components/DownloadLink.svelte';
-    import PlayButton from '$lib/components/PlayButton.svelte';
     import SongPlayButton from '$lib/components/SongPlayButton.svelte';
 
     /** @type {import('./$types').PageData}*/
