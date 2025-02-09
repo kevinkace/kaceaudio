@@ -1,5 +1,5 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
     import { matchRoute } from '$lib/helpers/matchRoute';
 
@@ -35,7 +35,7 @@
           </button>
           <div>
             {#each links as { href, label }}
-                <a class="navLink" class:active={matchRoute($page.route.id, href)} {href} >{label}</a>
+                <a class="navLink" class:active={matchRoute(page.route.id, href)} {href} >{label}</a>
             {/each}
           </div>
         </nav>
