@@ -55,7 +55,7 @@
         {@html icon}
     </button>
 
-    {#if showVolume || true}
+    {#if showVolume}
         <div class="slider-wrapper" transition:fly={{ x: -30, duration: 150 }}
         style={`--ratio:${queue.queue.muted ? 0 : queue.queue.volume}`}>
             <input
