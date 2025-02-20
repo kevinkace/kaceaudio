@@ -85,13 +85,13 @@ export const songArchive = [
         ]
     },
     {
-        year  : 2021,
+        year  : 2020,
         songs : [
             {
                 title   : 'Companion',
                 artist  : 'Kace',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Companion+-+Kace.mp3',
+                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/songs/Companion+-+Kace.mp3',
                 cover   : 'companion'
             }
         ]
