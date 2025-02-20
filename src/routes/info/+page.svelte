@@ -3,11 +3,12 @@
     import { find } from '$lib/helpers/images';
 
     const uyc = '/images/uyc.jpg';
+    const studio = '/images/first-studio.jpg';
 
-    let showUyc = false;
+    let show = false;
 
-    function click() {
-        showUyc = !showUyc;
+    function click(key) {
+        show = show === key ? false : key;
     }
 </script>
 
@@ -38,12 +39,14 @@
     <div>
         <p>I like to make music. It's often drum & bass or other bass music/EDM but not always.</p>
 
-        <p>I grew up in <a href="https://en.wikipedia.org/wiki/Waterloo,_Ontario">Waterloo Canada</a>, a university/tech city outside of Toronto. I played guitar in high school bands Another Heather and <a href={uyc} on:click|preventDefault={click}>U.Y.C.</a> - 519 hardcore - what up! Then I started making dnb and djing - Breakin' Borders, Earwaks, Wide Mind - what up! I moved to Toronto to attend the <a href="https://harrisinstitute.com/">Harris Institute</a> and received an honours diploma for their producing/engineering program. I worked at <a href="https://www.long-mcquade.com/">Long and McQuade</a> on Bloor St. I was the product specialist for <a href="https://musicmarketing.ca/">Steinberg Canada</a>. I was a recording engineer for <a href="https://mintmusic.ca/">Find A Way</a>.</p>
+        <p>
+            I grew up in <a href="https://en.wikipedia.org/wiki/Waterloo,_Ontario">Waterloo Canada</a>, a university/tech city outside of Toronto. I played guitar in high school bands Another Heather and <a href={uyc} on:click|preventDefault={() => click("uyc")}>U.Y.C.</a> - 519 hardcore - what up! Then I started making <a href={studio} on:click|preventDefault={() => click("studio")}>dnb and djing</a> - Breakin' Borders, Earwaks, Wide Mind - what up! I moved to Toronto to attend the <a href="https://harrisinstitute.com/">Harris Institute</a> and received an honours diploma for their producing/engineering program. I worked at <a href="https://www.long-mcquade.com/">Long and McQuade</a> on Bloor St. I was the product specialist for <a href="https://musicmarketing.ca/">Steinberg Canada</a>. I was a recording engineer for <a href="https://mintmusic.ca/">Find A Way</a>.
+        </p>
 
         <p>In 2006 I moved to Seattle and shortly after sunk deep into the nerd life and now I'm a web dev which is actually really cool but I do still make music though.</p>
 
-        {#if showUyc}
-            <enhanced:img src={find("uyc")} alt="U.Y.C." />
+        {#if show}
+            <enhanced:img src={find(show)} alt={show} />
         {/if}
 
     </div>
