@@ -14,7 +14,8 @@ let queue = $state({
     playing : false, // play button state
 
     /** @type null|HTMLAudioElement */
-    audio : null
+    audio : null,
+    soundcloud : null
 });
 
 export function getQueue() {
