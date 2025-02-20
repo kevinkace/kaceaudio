@@ -55,8 +55,9 @@
         {@html icon}
     </button>
 
-    {#if showVolume}
-        <div class="slider-wrapper" transition:fly={{ x: -30, duration: 150 }}>
+    {#if showVolume || true}
+        <div class="slider-wrapper" transition:fly={{ x: -30, duration: 150 }}
+        style={`--ratio:${queue.queue.muted ? 0 : queue.queue.volume}`}>
             <input
                 type="range"
 
@@ -70,7 +71,6 @@
                         queue.queue.volume = v || 0;
                     }}
 
-                style={`--ratio:${queue.queue.muted ? 0 : queue.queue.volume}`}
             />
         </div>
     {/if}
