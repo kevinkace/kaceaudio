@@ -92,7 +92,8 @@ export const songArchive = [
                 artist  : 'Kace',
                 bitrate : 320,
                 href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/songs/Companion+-+Kace.mp3',
-                cover   : 'companion'
+                cover   : 'companion',
+                soundcloud : "https://soundcloud.com/kace-1/companion"
             }
         ]
     }
