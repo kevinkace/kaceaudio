@@ -12,6 +12,7 @@ let queue = $state({
     muted : false,
 
     playing : false, // play button state
+    loading : false, // loading spinner state
 
     /** @type null|HTMLAudioElement */
     audio : null,
@@ -45,10 +46,12 @@ export function getQueue() {
             ...queue,
             playlist,
             current  : playlist.length - 1,
-            playing  : true
+            playing  : true,
+            loading : true
         };
 
         queue.audio?.addEventListener("canplay", () => {
+            queue.loading = false;
             queue.audio?.play();
         }, { once : true });
     }

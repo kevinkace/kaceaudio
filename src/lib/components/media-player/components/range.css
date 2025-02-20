@@ -1,6 +1,5 @@
 /* https://range-input-css.netlify.app/ */
 input[type="range"] {
-
     --progress-bg: linear-gradient(
             to right,
             var(--color-progress-elapsed) 0%,
