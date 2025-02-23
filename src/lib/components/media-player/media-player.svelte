@@ -1,17 +1,16 @@
 <script>
     import { onMount } from 'svelte';
-    import { fly } from 'svelte/transition';
+    import { fly }     from 'svelte/transition';
 
-    import CloseIcon  from '$lib/icons/close.svg?raw';
+    import { getQueue } from './queue.svelte.js';
 
     import Progress from './components/progress.svelte';
     import Details  from './components/details.svelte';
-
-    import { links } from '$lib/data/common.js';
-
-    import { getQueue } from './queue.svelte.js';
-    import Volume from './components/volume.svelte';
+    import Volume   from './components/volume.svelte';
     import Controls from './components/controls.svelte';
+    import Links    from './components/links.svelte';
+
+    import CloseIcon  from '../images/close.svg?raw';
 
     const queue = getQueue();
 
@@ -63,9 +62,7 @@
 
             <Details/>
 
-            <div class="links">
-                <a class="sc-link" href={current?.soundcloud || links.soundcloud.href}>{@html links.soundcloud.icon}</a>
-            </div>
+            <Links/>
 
         </div>
     </div>

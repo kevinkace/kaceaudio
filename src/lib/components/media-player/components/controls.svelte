@@ -1,10 +1,10 @@
 <script>
     import { getQueue } from '../queue.svelte.js';
 
-    import PrevIcon   from '$lib/icons/prev.svg?raw';
-    import PlayIcon   from '$lib/icons/play2.svg?raw';
-    import PauseIcon  from '$lib/icons/pause.svg?raw';
-    import NextIcon   from '$lib/icons/next.svg?raw';
+    import PrevIcon   from '../images/prev.svg?raw';
+    import PlayIcon   from '../images/play.svg?raw';
+    import PauseIcon  from '../images/pause.svg?raw';
+    import NextIcon   from '../images/next.svg?raw';
 
     let queue = getQueue();
 
