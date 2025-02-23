@@ -35,7 +35,7 @@
     .discog {
         display: grid;
 
-        margin-bottom: 2em;
+        margin: 2em 0;
         gap: 1em;
         grid-template-columns: repeat(1, 1fr);
 

@@ -1,7 +1,7 @@
 <script>
     import "../global.css";
 
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
     import Header      from "$lib/components/header.svelte";
     import MediaPlayer from "$lib/components/media-player/media-player.svelte";
@@ -17,16 +17,16 @@
         { ...links.bandcamp }
     ];
 
-    let meta = $derived(Object.assign({ title, desc, img }, $page.data.meta || {}));
+    let meta = $derived(Object.assign({ title, desc, img }, page.data.meta || {}));
 </script>
 
 
 <svelte:head>
     <title>{pageTitle(meta.title)}</title>
 
-    <meta property="og:title" content={ pageTitle(meta.title) } />
-    <meta property="og:description" content={meta.desc } />
-    <meta property="og:image" content={meta.img } />
+    <meta property="og:title" content={pageTitle(meta.title)} />
+    <meta property="og:description" content={meta.desc} />
+    <meta property="og:image" content={meta.img} />
 </svelte:head>
 
 <div class="layout">

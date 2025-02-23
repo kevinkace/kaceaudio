@@ -6,13 +6,15 @@ export const songArchive = [
                 title   : 'Dust Puddle - 2025 remaster',
                 artist  : 'Kace',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+remaster.mp3'
+                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+remaster.mp3',
+                cover : "dust-puddle"
             },
             {
                 title   : 'Dust Puddle - 2025 edit',
                 artist  : 'Kace',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+edit.mp3'
+                href    : 'https://kevinkace.s3.us-west-2.amazonaws.com/archive/songs/Dust+Puddle+-+Kace+-+2025+edit.mp3',
+                cover : "dust-puddle"
             }
         ]
     },
@@ -23,7 +25,8 @@ export const songArchive = [
                 title   : 'Cell Block',
                 artist  : 'Kace',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Cell+Block+-+Kace.mp3'
+                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Cell+Block+-+Kace.mp3',
+                cover : "cell-block"
             },
             {
                 title   : "Breakin'Borders Dub",
@@ -52,7 +55,8 @@ export const songArchive = [
                 title   : 'Sub Scrypt',
                 artist  : 'Kace & Andyslim',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Sub+Scrypt+-+Kace+%26+Andyslim.mp3'
+                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Sub+Scrypt+-+Kace+%26+Andyslim.mp3',
+                cover   : 'sub-scrypt'
             },
             {
                 title   : 'Booking - 2025 remaster',
@@ -75,7 +79,21 @@ export const songArchive = [
                 title   : 'Dust Bowl',
                 artist  : 'Kace',
                 bitrate : 320,
-                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Dustbowl+-+Kace.mp3'
+                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Dustbowl+-+Kace.mp3',
+                cover   : 'dust-bowl'
+            }
+        ]
+    },
+    {
+        year  : 2020,
+        songs : [
+            {
+                title   : 'Companion',
+                artist  : 'Kace',
+                bitrate : 320,
+                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/songs/Companion+-+Kace.mp3',
+                cover   : 'companion',
+                soundcloud : "https://soundcloud.com/kace-1/companion"
             }
         ]
     }

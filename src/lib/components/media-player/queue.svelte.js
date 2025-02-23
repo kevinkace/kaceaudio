@@ -1,5 +1,5 @@
 let queue = $state({
-    /** @type any[] */
+    /** @type {import('../../../../types').Song[]} */
     playlist : [],
     current : 0,
 
@@ -9,12 +9,14 @@ let queue = $state({
     scrubbing : false, // whether to update progressTime
 
     volume : 0.75,
-    muted : false, //
+    muted : false,
 
     playing : false, // play button state
+    loading : false, // loading spinner state
 
     /** @type null|HTMLAudioElement */
-    audio : null
+    audio : null,
+    soundcloud : null
 });
 
 export function getQueue() {
@@ -35,19 +37,21 @@ export function getQueue() {
 
     /**
      * add song to playlist
-     * @param {object} song
+     * @param {import('../../../../types').Song} song
      */
     function add(song) {
         let playlist = [ ...queue.playlist, song ];
 
         queue = {
             ...queue,
-            playlist : playlist,
+            playlist,
             current  : playlist.length - 1,
-            playing  : true
+            playing  : true,
+            loading : true
         };
 
         queue.audio?.addEventListener("canplay", () => {
+            queue.loading = false;
             queue.audio?.play();
         }, { once : true });
     }

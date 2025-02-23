@@ -1,5 +1,5 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
     import { matchRoute } from '$lib/helpers/matchRoute';
 
@@ -9,14 +9,11 @@
     import { title } from "$lib/data/common";
 
     const links = [{
-    //     href  : '/',
-    //     label : 'music'
-    // }, {
-        href  : '/samples',
-        label : 'samples'
-    }, {
         href  : '/songs/Companion',
         label : 'songs'
+    }, {
+        href  : '/samples',
+        label : 'samples'
     }, {
         href  : '/info',
         label : 'info'
@@ -38,7 +35,7 @@
           </button>
           <div>
             {#each links as { href, label }}
-                <a class="navLink" class:active={matchRoute($page.route.id, href)} {href} >{label}</a>
+                <a class="navLink" class:active={matchRoute(page.route.id, href)} {href} >{label}</a>
             {/each}
           </div>
         </nav>

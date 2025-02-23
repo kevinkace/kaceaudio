@@ -5,7 +5,7 @@
 @custom-media --mq-mid   screen and (min-width: 800px);
 
 :root {
-    --color-link: #aaa;
+    --color-link:rgb(190, 190, 190);
     --color-text: #eee;
     --color-bg: #000;
 
@@ -56,6 +56,7 @@ a {
 
     background: inherit;
     border: none;
+    transition: opacity 0.2s;
 
     &:hover {
         opacity: 1;
@@ -93,6 +94,10 @@ h3 {
 
 p {
     margin-bottom: 1em;
+
+    a {
+        color: var(--color-link);
+    }
 }
 
 
@@ -120,6 +125,15 @@ dd {
     a {
         color: var(--color-text);
     }
+}
+
+img,
+picture {
+    display: block;
+}
+
+svg {
+    fill: currentColor;
 }
 
 .split {

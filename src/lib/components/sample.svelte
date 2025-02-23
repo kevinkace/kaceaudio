@@ -1,5 +1,8 @@
 <script>
-    import Audio from "./audio.svelte";
+    import DownloadIcon from "$lib/icons/download.svg?raw";
+    import PlayIcon     from "$lib/icons/play2.svg?raw";
+
+    import { getQueue } from "./media-player/queue.svelte";
 
     export let title = "";
     export let preview = "";
@@ -7,30 +10,34 @@
     export let desc = "";
     export let showDesc = false;
 
-    let player = false;
+    let queue = getQueue();
 </script>
 
 <h3>{title}</h3>
 
 <div class="actions">
-    <a href={href} class="action download">download</a>
+    <a href={href} class="action download">
+        download
+        {@html DownloadIcon}
+    </a>
 
     <button
         class="action play"
         on:click={() => {
-            player = !player;
+            queue.add({
+                title,
+                artist : "Kace",
+                href   : preview
+            });
         }}
     >
         listen
+        {@html PlayIcon}
     </button>
 </div>
 
 {#if showDesc !== false}
     <p class="desc">{desc}</p>
-{/if}
-
-{#if player}
-    <Audio src={preview} />
 {/if}
 
 <style lang="postcss">
@@ -49,35 +56,14 @@
         padding-right: 1em;
         margin-right: 1em;
 
-        &:before {
-            content: '';
+        & :global(svg) {
             position: absolute;
             height: 0.7em;
             width: 0.7em;
-            top: 0.1em;
+            top: 0.6em;
             right: 0;
-
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-position: 100% 50%;
 
             opacity: 0.8;
         }
     }
-
-    .download {
-        &:before {
-            background-image: url($lib/icons/download.svg);
-        }
-    }
-
-    .play {
-        &:before {
-            width: 0.8em;
-            height: 0.8em;
-            top: 0.2em;
-            background-image: url($lib/icons/play.svg);
-        }
-    }
-
 </style>
