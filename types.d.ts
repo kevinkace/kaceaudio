@@ -5,6 +5,7 @@ export type Song = {
   bitrate?: number;
   href: string;
   cover?: string;
+  picture?: any;
   soundcloud?: string;
   bandcamp?: string;
 };
