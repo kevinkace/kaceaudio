@@ -19,3 +19,12 @@
         <a class="sc-link" href={current?.soundcloud}>{@html SoundcloudIcon}</a>
     {/if}
 </div>
+
+<style>
+    .links {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

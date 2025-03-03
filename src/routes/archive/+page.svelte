@@ -42,35 +42,35 @@
         <h3>{year}</h3>
 
         <ul class="list">
-            {#each sets as song}
+            {#each sets as set}
                 <li class="listItem">
-                    <SongPlayButton {song}>
-                        <strong>{song.title}</strong> -
-                        {song.artist}
+                    <SongPlayButton song={set}>
+                        <strong>{set.title}</strong> -
+                        {set.artist}
                     </SongPlayButton>
 
                     <Sep/>
-                    {song.duration}
+                    {set.duration}
                     <Sep/>
 
                     <a
-                        on:click|preventDefault={() => { queue.add(song); }}
-                        href={song.href}
+                        on:click|preventDefault={() => { queue.add(set); }}
+                        href={set.href}
                     >
-                        mp3 ({song.bitrate})
+                        mp3 ({set.bitrate})
                     </a>
 
-                    {#if song.tracklist}
+                    {#if set.tracklist}
                         <Sep/>
                         <button on:click={() => {
-                            showTracklist = showTracklist === song.title ? null : song.title;
+                            showTracklist = showTracklist === set.title ? null : set.title;
                         }}>
                             tracklist
                         </button>
 
-                        {#if showTracklist === song.title}
+                        {#if showTracklist === set.title}
                             <ol class="tracklist">
-                                {#each song.tracklist as track}
+                                {#each set.tracklist as track}
                                     <li>{track}</li>
                                 {/each}
                             </ol>

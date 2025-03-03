@@ -10,7 +10,7 @@
     import Controls from './components/controls.svelte';
     import Links    from './components/links.svelte';
 
-    import CloseIcon  from '../images/close.svg?raw';
+    import CloseIcon  from './images/close.svg?raw';
 
     const queue = getQueue();
 
@@ -87,10 +87,10 @@
 </div>
 
 <style lang="postcss">
-    @import './components/iconButton.css';
-
     @custom-media --mq-split screen and (min-width: 600px);
     @custom-media --mq-mid   screen and (min-width: 800px);
+
+    @import './components/iconButton.css';
 
     .media-player {
         --bar-height: 0.3rem;
