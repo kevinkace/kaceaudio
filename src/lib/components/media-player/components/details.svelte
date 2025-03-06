@@ -7,7 +7,9 @@
 </script>
 
 <div class="currently-playing">
-    <enhanced:img src={current?.picture} alt="cover" class="cover"/>
+    {#if current?.picture}
+        <enhanced:img src={current?.picture} alt="cover" class="cover"/>
+    {/if}
 
     <div class="content">
         <div class="artist">{current?.artist || 'Artist'}</div>
