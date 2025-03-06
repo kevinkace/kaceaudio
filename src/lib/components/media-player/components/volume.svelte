@@ -1,10 +1,10 @@
 <script>
     import { fly } from 'svelte/transition';
 
-    import MuteIcon         from '$lib/icons/volume-mute.svg?raw';
-    import VolumeLowIcon    from '$lib/icons/volume-low.svg?raw';
-    import VolumeMediumIcon from '$lib/icons/volume-medium.svg?raw';
-    import VolumeHighIcon   from '$lib/icons/volume-high.svg?raw';
+    import MuteIcon         from '../images/volume-mute.svg?raw';
+    import VolumeLowIcon    from '../images/volume-low.svg?raw';
+    import VolumeMediumIcon from '../images/volume-medium.svg?raw';
+    import VolumeHighIcon   from '../images/volume-high.svg?raw';
 
     import { getQueue } from "../queue.svelte";
 

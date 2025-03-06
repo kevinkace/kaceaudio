@@ -1,15 +1,15 @@
 <script>
     import { getQueue } from "../queue.svelte.js";
 
-    import { find } from '$lib/helpers/images.js';
-
     let queue = getQueue();
 
     let current = $derived(queue.queue.playlist[queue.queue.current]);
 </script>
 
 <div class="currently-playing">
-    <enhanced:img src={find(current.cover)} alt="cover" class="cover"/>
+    {#if current?.picture}
+        <enhanced:img src={current?.picture} alt="cover" class="cover"/>
+    {/if}
 
     <div class="content">
         <div class="artist">{current?.artist || 'Artist'}</div>

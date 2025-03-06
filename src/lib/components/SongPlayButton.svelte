@@ -1,8 +1,9 @@
 <script>
     import { getQueue } from './media-player/queue.svelte';
 
-    import PlayIcon from '$lib/icons/play2.svg?raw';
+    import PlayIcon  from '$lib/icons/play2.svg?raw';
     import PauseIcon from '$lib/icons/pause.svg?raw';
+    import { find }  from '$lib/helpers/images';
 
     let queue = getQueue();
 
@@ -16,7 +17,10 @@
     if (current.href === song.href) {
         queue.togglePlay();
     } else {
-        queue.add(song);
+        queue.add({
+            picture : find(song.cover),
+            ...song
+        });
     }
 }} class:playing={playing}>
     {@html playing ? PauseIcon : PlayIcon}

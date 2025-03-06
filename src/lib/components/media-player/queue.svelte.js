@@ -15,8 +15,7 @@ let queue = $state({
     loading : false, // loading spinner state
 
     /** @type null|HTMLAudioElement */
-    audio : null,
-    soundcloud : null
+    audio : null
 });
 
 export function getQueue() {
