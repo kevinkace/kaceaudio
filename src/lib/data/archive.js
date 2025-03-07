@@ -45,6 +45,13 @@ export const songArchive = [
                 artist  : 'Kace & Andyslim',
                 bitrate : 320,
                 href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Freezeline+-+Kace+%26+Andyslim.mp3'
+            },
+            {
+                title   : 'Freezeline VIP',
+                artist  : 'Catacomb',
+                bitrate : 320,
+                href    : 'https://kevinkace.s3-us-west-2.amazonaws.com/archive/songs/Freezeline+VIP+-+Catacomb.mp3',
+                cover   : 'freezeline-vip'
             }
         ]
     },
